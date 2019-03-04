@@ -319,26 +319,20 @@ execute if score status mw matches 2 if score min mw matches ..-1 run function m
 
 #.319        2.15
 
-
-execute as @a[scores={xp=1},level=0] at @s run summon armor_stand ~ ~1.8 ~ {Marker:1b,Invisible:1b,Tags:["Slow"],NoGravity:1b,NoBasePlate:1b,Passengers:[{Tags:["Slow"],Silent:1b,Invulnerable:1b,id:"minecraft:shulker",NoAI:1b,AttachFace:0b,ActiveEffects:[{Id:14b,Amplifier:1b,Duration:99999,ShowParticles:0b}]}]}
-execute as @a[scores={xp=1},level=0] at @s run summon armor_stand ~0.801 ~1.6 ~ {Marker:1b,Invisible:1b,Tags:["Slow"],NoGravity:1b,NoBasePlate:1b,Passengers:[{Tags:["Slow"],Silent:1b,Invulnerable:1b,id:"minecraft:shulker",NoAI:1b,AttachFace:0b,ActiveEffects:[{Id:14b,Amplifier:1b,Duration:99999,ShowParticles:0b}]}]}
-execute as @a[scores={xp=1},level=0] at @s run summon armor_stand ~-0.801 ~1.6 ~ {Marker:1b,Invisible:1b,Tags:["Slow"],NoGravity:1b,NoBasePlate:1b,Passengers:[{Tags:["Slow"],Silent:1b,Invulnerable:1b,id:"minecraft:shulker",NoAI:1b,AttachFace:0b,ActiveEffects:[{Id:14b,Amplifier:1b,Duration:99999,ShowParticles:0b}]}]}
-execute as @a[scores={xp=1},level=0] at @s run summon armor_stand ~ ~1.6 ~0.801 {Marker:1b,Invisible:1b,Tags:["Slow"],NoGravity:1b,NoBasePlate:1b,Passengers:[{Tags:["Slow"],Silent:1b,Invulnerable:1b,id:"minecraft:shulker",NoAI:1b,AttachFace:0b,ActiveEffects:[{Id:14b,Amplifier:1b,Duration:99999,ShowParticles:0b}]}]}
-execute as @a[scores={xp=1},level=0] at @s run summon armor_stand ~ ~1.6 ~-0.801 {Marker:1b,Invisible:1b,Tags:["Slow"],NoGravity:1b,NoBasePlate:1b,Passengers:[{Tags:["Slow"],Silent:1b,Invulnerable:1b,id:"minecraft:shulker",NoAI:1b,AttachFace:0b,ActiveEffects:[{Id:14b,Amplifier:1b,Duration:99999,ShowParticles:0b}]}]}
-
-
-execute as @a[scores={xp=0},level=1] at @s positioned ~ ~1.8 ~ run tp @e[distance=..0.5,tag=Slow] ~ ~-100 ~
-execute as @a[scores={xp=0},level=1] at @s positioned ~0.801 ~1.6 ~ run tp @e[distance=..0.5,tag=Slow] ~ ~-100 ~
-execute as @a[scores={xp=0},level=1] at @s positioned ~-0.801 ~1.6 ~ run tp @e[distance=..0.5,tag=Slow] ~ ~-100 ~
-execute as @a[scores={xp=0},level=1] at @s positioned ~ ~1.6 ~0.801 run tp @e[distance=..0.5,tag=Slow] ~ ~-100 ~
-execute as @a[scores={xp=0},level=1] at @s positioned ~ ~1.6 ~-0.801 run tp @e[distance=..0.5,tag=Slow] ~ ~-100 ~
+execute as @a[scores={xp=0},level=1] at @s positioned ~ ~1.8 ~ run tp @e[distance=..1,tag=Slow,limit=1,sort=nearest] ~ ~-100 ~
+execute as @a[scores={xp=0},level=1] at @s positioned ~0.801 ~1.6 ~ run tp @e[distance=..1,tag=Slow,limit=1,sort=nearest] ~ ~-100 ~
+execute as @a[scores={xp=0},level=1] at @s positioned ~-0.801 ~1.6 ~ run tp @e[distance=..1,tag=Slow,limit=1,sort=nearest] ~ ~-100 ~
+execute as @a[scores={xp=0},level=1] at @s positioned ~ ~1.6 ~0.801 run tp @e[distance=..1,tag=Slow,limit=1,sort=nearest] ~ ~-100 ~
+execute as @a[scores={xp=0},level=1] at @s positioned ~ ~1.6 ~-0.801 run tp @e[distance=..1,tag=Slow,limit=1,sort=nearest] ~ ~-100 ~
 
 
-execute as @a[scores={xp=0},level=1] at @s positioned ~ ~1.8 ~ run tp @e[distance=..1,type=minecraft:shulker] ~ ~-100 ~
-execute as @a[scores={xp=0},level=1] at @s positioned ~0.801 ~1.6 ~ run tp @e[distance=..1,type=minecraft:shulker] ~ ~-100 ~
-execute as @a[scores={xp=0},level=1] at @s positioned ~-0.801 ~1.6 ~ run tp @e[distance=..1,type=minecraft:shulker] ~ ~-100 ~
-execute as @a[scores={xp=0},level=1] at @s positioned ~ ~1.6 ~0.801 run tp @e[distance=..1,type=minecraft:shulker] ~ ~-100 ~
-execute as @a[scores={xp=0},level=1] at @s positioned ~ ~1.6 ~-0.801 run tp @e[distance=..1,type=minecraft:shulker] ~ ~-100 ~
+execute as @a[scores={xp=0},level=1] at @s positioned ~ ~1.8 ~ run tp @e[distance=..1,type=minecraft:shulker,limit=1,sort=nearest] ~ ~-100 ~
+execute as @a[scores={xp=0},level=1] at @s positioned ~0.801 ~1.6 ~ run tp @e[distance=..1,type=minecraft:shulker,limit=1,sort=nearest] ~ ~-100 ~
+execute as @a[scores={xp=0},level=1] at @s positioned ~-0.801 ~1.6 ~ run tp @e[distance=..1,type=minecraft:shulker,limit=1,sort=nearest] ~ ~-100 ~
+execute as @a[scores={xp=0},level=1] at @s positioned ~ ~1.6 ~0.801 run tp @e[distance=..1,type=minecraft:shulker,limit=1,sort=nearest] ~ ~-100 ~
+execute as @a[scores={xp=0},level=1] at @s positioned ~ ~1.6 ~-0.801 run tp @e[distance=..1,type=minecraft:shulker,limit=1,sort=nearest] ~ ~-100 ~
+
+function mw:walk/summon
 
 execute as @e[tag=Slow] at @s unless entity @a[distance=..5] run scoreboard players add @s slowLifeTime 1
 execute as @e[type=shulker] at @s unless entity @a[distance=..5] run scoreboard players add @s slowLifeTime 1
