@@ -11,9 +11,6 @@ gamemode adventure @a
 execute as @e[type=minecraft:item_frame,x=127,y=43,z=1210,dx=1,dz=5,dy=2] run data merge entity @s {ItemRotation:0b}
 execute as @e[type=minecraft:item_frame,x=109,y=43,z=1210,dx=1,dz=5,dy=2] run data merge entity @s {ItemRotation:0b}
 
-
-
-
 scoreboard players set players mw 0
 execute as @a run scoreboard players add players mw 1
 
@@ -23,7 +20,6 @@ function mw:scoreboardplayersflags
 bossbar set timer players @a
 
 execute as @a unless score @s skin matches 1..6 run scoreboard players set @s skin 1
-
 
 #map selector
     execute if score map mw matches 0 run data merge block 114 36 1210 {metadata:"",mirror:"NONE",ignoreEntities:0b,powered:0b,seed:0L,author:"AzerusS",rotation:"NONE",posX:1,mode:"LOAD",posY:1,sizeX:7,posZ:0,integrity:1.0f,showair:1b,name:"premap:classic",sizeY:2,sizeZ:7,showboundingbox:1b}
@@ -302,18 +298,21 @@ setblock 114 37 1210 minecraft:redstone_block
     execute if score status mw matches 2 as @a[team=!,scores={fastwalkers=1..}] run scoreboard players remove @s 1
 
     #.319        2.15
-    execute as @a[scores={xp=0},level=1] at @s positioned ~ ~1.8 ~ run tp @e[distance=..1,tag=Slow,limit=1,sort=nearest] ~ ~-100 ~
-    execute as @a[scores={xp=0},level=1] at @s positioned ~0.801 ~1.6 ~ run tp @e[distance=..1,tag=Slow,limit=1,sort=nearest] ~ ~-100 ~
-    execute as @a[scores={xp=0},level=1] at @s positioned ~-0.801 ~1.6 ~ run tp @e[distance=..1,tag=Slow,limit=1,sort=nearest] ~ ~-100 ~
-    execute as @a[scores={xp=0},level=1] at @s positioned ~ ~1.6 ~0.801 run tp @e[distance=..1,tag=Slow,limit=1,sort=nearest] ~ ~-100 ~
-    execute as @a[scores={xp=0},level=1] at @s positioned ~ ~1.6 ~-0.801 run tp @e[distance=..1,tag=Slow,limit=1,sort=nearest] ~ ~-100 ~
+    execute as @a[level=1..] at @s positioned ~ ~1.8 ~ run tp @e[distance=..0.1,tag=Slow,limit=1,sort=nearest] ~ ~-100 ~
+    execute as @a[level=1..] at @s positioned ~0.801 ~1.6 ~ run tp @e[distance=..0.1,tag=Slow,limit=1,sort=nearest] ~ ~-100 ~
+    execute as @a[level=1..] at @s positioned ~-0.801 ~1.6 ~ run tp @e[distance=..0.1,tag=Slow,limit=1,sort=nearest] ~ ~-100 ~
+    execute as @a[level=1..] at @s positioned ~ ~1.6 ~0.801 run tp @e[distance=..0.1,tag=Slow,limit=1,sort=nearest] ~ ~-100 ~
+    execute as @a[level=1..] at @s positioned ~ ~1.6 ~-0.801 run tp @e[distance=..0.1,tag=Slow,limit=1,sort=nearest] ~ ~-100 ~
 
+    execute as @a[level=1..] at @s positioned ~ ~1.8 ~ run tp @e[distance=..0.1,type=minecraft:shulker,limit=1,sort=nearest] ~ ~-100 ~
+    execute as @a[level=1..] at @s positioned ~0.801 ~1.6 ~ run tp @e[distance=..0.1,type=minecraft:shulker,limit=1,sort=nearest] ~ ~-100 ~
+    execute as @a[level=1..] at @s positioned ~-0.801 ~1.6 ~ run tp @e[distance=..0.1,type=minecraft:shulker,limit=1,sort=nearest] ~ ~-100 ~
+    execute as @a[level=1..] at @s positioned ~ ~1.6 ~0.801 run tp @e[distance=..0.1,type=minecraft:shulker,limit=1,sort=nearest] ~ ~-100 ~
+    execute as @a[level=1..] at @s positioned ~ ~1.6 ~-0.801 run tp @e[distance=..0.1,type=minecraft:shulker,limit=1,sort=nearest] ~ ~-100 ~
+    
+    
+    execute as @a[level=1..] at @s positioned ~ ~ ~ run kill @e[distance=..0.1,type=minecraft:armor_stand,limit=1,sort=nearest]
 
-    execute as @a[scores={xp=0},level=1] at @s positioned ~ ~1.8 ~ run tp @e[distance=..1,type=minecraft:shulker,limit=1,sort=nearest] ~ ~-100 ~
-    execute as @a[scores={xp=0},level=1] at @s positioned ~0.801 ~1.6 ~ run tp @e[distance=..1,type=minecraft:shulker,limit=1,sort=nearest] ~ ~-100 ~
-    execute as @a[scores={xp=0},level=1] at @s positioned ~-0.801 ~1.6 ~ run tp @e[distance=..1,type=minecraft:shulker,limit=1,sort=nearest] ~ ~-100 ~
-    execute as @a[scores={xp=0},level=1] at @s positioned ~ ~1.6 ~0.801 run tp @e[distance=..1,type=minecraft:shulker,limit=1,sort=nearest] ~ ~-100 ~
-    execute as @a[scores={xp=0},level=1] at @s positioned ~ ~1.6 ~-0.801 run tp @e[distance=..1,type=minecraft:shulker,limit=1,sort=nearest] ~ ~-100 ~
 
     function mw:walk/summon
 
