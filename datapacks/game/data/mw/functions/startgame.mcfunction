@@ -6,6 +6,8 @@ function mw:setunit
 scoreboard objectives setdisplay sidebar MazeWars
 experience set @a[team=!] 15 levels
 
+team modify Red nametagVisibility hideForOtherTeams
+team modify Blue nametagVisibility hideForOtherTeams
 
 scoreboard players set min mw 10
 scoreboard players set sec mw 0
