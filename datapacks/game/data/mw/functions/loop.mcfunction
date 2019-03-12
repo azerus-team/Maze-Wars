@@ -84,13 +84,6 @@ execute as @a unless score @s skin matches 1..6 run scoreboard players set @s sk
     execute if score restamina mw matches 6 run data merge block 127 42 1213 {Text2:"{\"text\":\"Stamina recovery:\",\"color\":\"aqua\"}",Text3:"[\"\",{\"text\":\"1.75\",\"color\":\"dark_green\"},{\"text\":\" stamina/sec\",\"color\":\"dark_purple\"}]"}
     execute if score restamina mw matches 7 run data merge block 127 42 1213 {Text2:"{\"text\":\"Stamina recovery:\",\"color\":\"aqua\"}",Text3:"[\"\",{\"text\":\"2\",\"color\":\"dark_green\"},{\"text\":\" stamina/sec\",\"color\":\"dark_purple\"}]"}
 
-
-
-
-
-
-
-
 kill @e[type=item]
 
 setblock 114 37 1210 minecraft:air
@@ -175,10 +168,12 @@ setblock 114 37 1210 minecraft:redstone_block
     execute as @a[team=Red] at @s positioned ~ ~-2 ~ if entity @e[type=minecraft:wolf,tag=Blue,distance=..0.5] run scoreboard players set @s dogBite 600
     execute as @a[team=Blue] at @s positioned ~ ~-2 ~ if entity @e[type=minecraft:wolf,tag=Red,distance=..0.5] run scoreboard players set @s dogBite 600
     
+    execute as @a[team=Red] at @s positioned ~ ~-2 ~ if entity @e[type=minecraft:wolf,tag=Blue,distance=..0.5] run kill @e[type=minecraft:wolf,distance=..0.5,sort=nearest,limit=1,tag=Blue]
+    execute as @a[team=Blue] at @s positioned ~ ~-2 ~ if entity @e[type=minecraft:wolf,tag=Red,distance=..0.5] run kill @e[type=minecraft:wolf,distance=..0.5,sort=nearest,limit=1,tag=Red]
+#freeze Method
     execute as @a[scores={dogBite=1..}] run scoreboard players remove @s dogBite 1
 
 #view distance
-
     execute if score status mw matches 2 if score distance mw matches 2 as @a at @s run fill ~-2 ~-2 ~-2 ~2 ~2 ~2 minecraft:barrier replace minecraft:black_concrete
     execute if score status mw matches 2 if score distance mw matches 3 as @a at @s run fill ~-3 ~-3 ~-3 ~3 ~3 ~3 minecraft:barrier replace minecraft:black_concrete
     execute if score status mw matches 2 if score distance mw matches 4 as @a at @s run fill ~-4 ~-4 ~-4 ~4 ~4 ~4 minecraft:barrier replace minecraft:black_concrete
@@ -208,10 +203,6 @@ setblock 114 37 1210 minecraft:redstone_block
     execute if score status mw matches 0 as @a[team=] run replaceitem entity @s armor.legs minecraft:air
     execute if score status mw matches 0 as @a[team=] run replaceitem entity @s armor.feet minecraft:air
 
-
-
-
-
 #InGame Events
     execute as @a[x=-2007,y=67,z=-2007,dx=300,dy=300,dz=300,team=!] at @s positioned ~ ~ ~ if block ~ ~-3 ~ minecraft:diamond_block run experience add @s 7 levels
     execute as @a[level=16..] run experience set @s 15 levels
@@ -222,8 +213,6 @@ setblock 114 37 1210 minecraft:redstone_block
 
     execute as @a[x=-2007,y=67,z=-2007,dx=300,dy=300,dz=300,team=Red] at @s positioned ~ ~ ~ if block ~ ~-3 ~ minecraft:lapis_block run function mw:stop
     execute as @a[x=-2007,y=67,z=-2007,dx=300,dy=300,dz=300,team=Blue] at @s positioned ~ ~ ~ if block ~ ~-3 ~ minecraft:redstone_block run function mw:stop
-
-
 
     execute if score status mw matches 2 as @a[team=Red,scores={skin=1},sort=random] at @s positioned ~ 117 ~ rotated as @s as @e[limit=1,sort=nearest,type=armor_stand,tag=r1] align xz positioned ~.5 ~ ~.5 run tp @s ~ ~ ~ ~ ~
     execute if score status mw matches 2 as @a[team=Red,scores={skin=2},sort=random] at @s positioned ~ 117 ~ rotated as @s as @e[limit=1,sort=nearest,type=armor_stand,tag=r2] align xz positioned ~.5 ~ ~.5 run tp @s ~ ~ ~ ~ ~
@@ -257,13 +246,6 @@ setblock 114 37 1210 minecraft:redstone_block
     execute as @a[x=-2007,y=67,z=-2007,dx=300,dy=300,dz=300,team=Blue] at @s positioned ~ ~ ~ if block ~ ~-3 ~ minecraft:emerald_block run scoreboard players add blueFlag mw 1
     execute as @a[x=-2007,y=67,z=-2007,dx=300,dy=300,dz=300] at @s positioned ~ ~ ~ if block ~ ~-3 ~ minecraft:emerald_block run function mw:flag
 
-
-
-
-
-
-
-
 #timer
     scoreboard players add tickToSec var 1
     execute if score tickToSec var matches 20.. run function mw:loopeveryseconds
@@ -279,10 +261,7 @@ setblock 114 37 1210 minecraft:redstone_block
 
     execute if score status mw matches 2 if score min mw matches ..-1 run function mw:stop
 
-
-
 #slow walk
-        
     scoreboard players add tickTo2Sec var 1
     execute if score tickTo2Sec var matches 1 run function mw:loopevery2seconds
     execute if score restamina mw matches 1 if score tickTo2Sec var matches 40.. run scoreboard players set tickTo2Sec var 0
@@ -293,7 +272,6 @@ setblock 114 37 1210 minecraft:redstone_block
     execute if score restamina mw matches 6 if score tickTo2Sec var matches 11.. run scoreboard players set tickTo2Sec var 0
     execute if score restamina mw matches 7 if score tickTo2Sec var matches 10.. run scoreboard players set tickTo2Sec var 0
 
-
     execute as @a[team=!] run scoreboard players operation @s walkOneCM += @s sprintOneCM
     scoreboard players set @a sprintOneCM 0
     execute as @a[team=!] run scoreboard players operation @s walkOneCM += @s shiftWalk
@@ -301,38 +279,16 @@ setblock 114 37 1210 minecraft:redstone_block
     execute as @a[team=!] run scoreboard players operation @s walkOneM = @s walkOneCM
     execute as @a[team=!] run scoreboard players operation @s walkOneM /= 100 var
 
-
-
     execute if score status mw matches 2 as @a[team=!,level=1..15,scores={walkOneM=1..}] run experience add @s -1 levels
     execute if score status mw matches 2 as @a[team=!,level=0..14,scores={walkOneM=1..}] run scoreboard players set @s walkOneCM 0
-
-
-
-    execute if score status mw matches 2 as @a[team=!,scores={fastwalkers=1..}] run scoreboard players remove @s 1
-
+ 
+    #execute if score status mw matches 2 as @a[team=!,scores={fastwalkers=1..}] run scoreboard players remove @s 1
     #.319        2.15
-    execute as @a[level=1..] at @s positioned ~ ~1.8 ~ run tp @e[distance=..0.1,tag=Slow,limit=1,sort=nearest] ~ ~-100 ~
-    execute as @a[level=1..] at @s positioned ~0.801 ~1.6 ~ run tp @e[distance=..0.1,tag=Slow,limit=1,sort=nearest] ~ ~-100 ~
-    execute as @a[level=1..] at @s positioned ~-0.801 ~1.6 ~ run tp @e[distance=..0.1,tag=Slow,limit=1,sort=nearest] ~ ~-100 ~
-    execute as @a[level=1..] at @s positioned ~ ~1.6 ~0.801 run tp @e[distance=..0.1,tag=Slow,limit=1,sort=nearest] ~ ~-100 ~
-    execute as @a[level=1..] at @s positioned ~ ~1.6 ~-0.801 run tp @e[distance=..0.1,tag=Slow,limit=1,sort=nearest] ~ ~-100 ~
+    execute as @a[scores={xp=1..},level=0] at @s run summon minecraft:armor_stand ~ ~ ~ {Invisible:1b,Marker:1b,NoGravity:1b,Tags:["slowmover"]}
+    execute as @a[level=..0] at @s at @e[type=minecraft:armor_stand,tag=slowmover] run tp @s ~ ~ ~
+    execute as @a[level=1..,scores={xp=0}] at @s run kill @e[type=minecraft:armor_stand,tag=slowmover,limit=1,sort=nearest]
+    #function mw:walk/summon
 
-    execute as @a[level=1..] at @s positioned ~ ~1.8 ~ run tp @e[distance=..0.1,type=minecraft:shulker,limit=1,sort=nearest] ~ ~-100 ~
-    execute as @a[level=1..] at @s positioned ~0.801 ~1.6 ~ run tp @e[distance=..0.1,type=minecraft:shulker,limit=1,sort=nearest] ~ ~-100 ~
-    execute as @a[level=1..] at @s positioned ~-0.801 ~1.6 ~ run tp @e[distance=..0.1,type=minecraft:shulker,limit=1,sort=nearest] ~ ~-100 ~
-    execute as @a[level=1..] at @s positioned ~ ~1.6 ~0.801 run tp @e[distance=..0.1,type=minecraft:shulker,limit=1,sort=nearest] ~ ~-100 ~
-    execute as @a[level=1..] at @s positioned ~ ~1.6 ~-0.801 run tp @e[distance=..0.1,type=minecraft:shulker,limit=1,sort=nearest] ~ ~-100 ~
-    
-    
-    execute as @a[level=1..] at @s positioned ~ ~ ~ run kill @e[distance=..0.1,type=minecraft:armor_stand,limit=1,sort=nearest]
-
-
-    function mw:walk/summon
-
-    execute as @e[tag=Slow] at @s unless entity @a[distance=..5] run scoreboard players add @s slowLifeTime 1
-    execute as @e[type=shulker] at @s unless entity @a[distance=..5] run scoreboard players add @s slowLifeTime 1
-
-    kill @e[scores={slowLifeTime=50..}]
 
     execute as @a store result score @s xp run experience query @s levels
 
@@ -344,13 +300,8 @@ setblock 114 37 1210 minecraft:redstone_block
     execute at @e[type=armor_stand,tag=bowGame] as @a[distance=..4,tag=!bowGamer] run scoreboard players set @s bowGame 0
     execute at @e[type=armor_stand,tag=bowGame] as @a[distance=..4] run tag @s add bowGamer
 
-    
-
     execute as @a[tag=bowGamer,nbt=!{Inventory:[{Slot:4b,id:"minecraft:bow"}]}] run replaceitem entity @s hotbar.4 minecraft:bow{Unbreakable:true,HideFlags:63,Enchantments:[{id:"minecraft:power",lvl:255},{id:"minecraft:infinity",lvl:1}]} 1
     execute as @a[tag=bowGamer,nbt=!{Inventory:[{Slot:27b,id:"minecraft:arrow"}]}] run replaceitem entity @s container.27 minecraft:arrow
-
-
-
 
     kill @e[type=minecraft:arrow,nbt={inGround:1b}]
 
