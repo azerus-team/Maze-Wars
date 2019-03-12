@@ -293,12 +293,13 @@ setblock 114 37 1210 minecraft:redstone_block
  
     #execute if score status mw matches 2 as @a[team=!,scores={fastwalkers=1..}] run scoreboard players remove @s 1
     #.319        2.15
+    scoreboard players add 2tick var 1
     execute as @a[scores={xp=1..},level=0] at @s run summon minecraft:armor_stand ~ ~ ~ {Invisible:1b,Marker:1b,NoGravity:1b,Tags:["slowmover"]}
-    execute as @a[level=..0] at @s at @e[type=minecraft:armor_stand,tag=slowmover] run tp @s ~ ~ ~
+    execute if score 2tick var matches 2.. as @a[level=..0] at @s at @e[type=minecraft:armor_stand,tag=slowmover] run tp @s ~ ~ ~
     execute as @a[level=1..,scores={xp=0}] at @s run kill @e[type=minecraft:armor_stand,tag=slowmover,limit=1,sort=nearest]
+    
+    execute if score 2tick var matches 2.. run scoreboard players set 2tick var 0
     #function mw:walk/summon
-
-
     execute as @a store result score @s xp run experience query @s levels
 
 #Bow Game
