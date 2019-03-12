@@ -170,7 +170,7 @@ setblock 114 37 1210 minecraft:redstone_block
     
     execute as @a[team=Red] at @s positioned ~ ~-2 ~ if entity @e[type=minecraft:wolf,tag=Blue,distance=..0.5] run kill @e[type=minecraft:wolf,distance=..0.5,sort=nearest,limit=1,tag=Blue]
     execute as @a[team=Blue] at @s positioned ~ ~-2 ~ if entity @e[type=minecraft:wolf,tag=Red,distance=..0.5] run kill @e[type=minecraft:wolf,distance=..0.5,sort=nearest,limit=1,tag=Red]
-#freeze Method
+    #freeze Method
     execute as @a[scores={dogBite=1..}] run scoreboard players remove @s dogBite 1
 
 #view distance
