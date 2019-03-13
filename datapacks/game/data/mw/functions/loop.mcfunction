@@ -146,6 +146,7 @@ setblock 114 37 1210 minecraft:redstone_block
     execute as @a[team=Blue] if score distance mw matches 10 if score bTorch mw matches 1.. at @s run fill ~-13 ~-13 ~-13 ~13 ~13 ~13 minecraft:barrier replace minecraft:black_concrete
     #tnt
     execute as @a[scores={tntDrop=1..}] unless entity @s[x=-1997,y=-1,z=-1996,dx=56,dz=56,dy=200] run tellraw @s ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"] "},{"text":"T","color":"red"},{"text":"N","color":"white"},{"text":"T","color":"red"},{"text":" cannot be used on the edge of a maze.","color":"gold"}]
+    execute as @a[scores={tntDrop=1..}] unless entity @s[x=-1997,y=-1,z=-1996,dx=56,dz=56,dy=200] run give @s minecraft:tnt{display:{Name:"[{\"text\":\"T\",\"color\":\"red\",\"italic\":\"false\"},{\"text\":\"N\",\"color\":\"white\",\"italic\":\"false\"},{\"text\":\"T\",\"color\":\"red\",\"italic\":\"false\"},{\"text\":\" [Press \",\"color\":\"white\",\"italic\":\"false\"},{\"keybind\":\"key.drop\",\"color\":\"white\",\"italic\":\"false\"},{\"text\":\" to use]\",\"color\":\"white\",\"italic\":\"false\"}]"}} 1
     execute as @a[scores={tntDrop=1..},x=-1997,y=-1,z=-1996,dx=56,dz=56,dy=200] at @s run fill ~1 72 ~1 ~-1 72 ~-1 minecraft:air
     execute as @a[scores={tntDrop=1..},x=-1997,y=-1,z=-1996,dx=56,dz=56,dy=200] at @s run fill ~1 70 ~1 ~-1 70 ~-1 minecraft:air
     execute as @a[scores={tntDrop=1..},x=-1997,y=-1,z=-1996,dx=56,dz=56,dy=200] at @s run fill ~1 117 ~1 ~-1 117 ~-1 minecraft:air
@@ -156,11 +157,11 @@ setblock 114 37 1210 minecraft:redstone_block
     execute as @a[scores={inc_sacDrop=1..},team=Blue] at @r[team=Red] run function mw:blind
     scoreboard players set @a inc_sacDrop 0
     #dog
-    execute as @a[scores={dropWolfEgg=1..},team=Red] run summon minecraft:wolf ~ 70 ~ {NoAI:1b,NoGravity:1b,Tags:["Red"],Silent:1b}
-    execute as @a[scores={dropWolfEgg=1..},team=Blue] run summon minecraft:wolf ~ 117 ~ {NoAI:1b,NoGravity:1b,Tags:["Blue"],Silent:1b}
+    execute as @a[scores={dropWolfEgg=1..},team=Red] at @s run summon minecraft:wolf ~ 70 ~ {NoAI:1b,NoGravity:1b,Tags:["Red"],Silent:1b}
+    execute as @a[scores={dropWolfEgg=1..},team=Blue] at @s run summon minecraft:wolf ~ 117 ~ {NoAI:1b,NoGravity:1b,Tags:["Blue"],Silent:1b}
 
-    execute as @a[scores={dropWolfEgg=1..},team=Red] run summon minecraft:wolf ~ 117 ~ {NoAI:1b,NoGravity:1b,Tags:["Red"],Silent:1b}
-    execute as @a[scores={dropWolfEgg=1..},team=Blue] run summon minecraft:wolf ~ 70 ~ {NoAI:1b,NoGravity:1b,Tags:["Blue"],Silent:1b}
+    execute as @a[scores={dropWolfEgg=1..},team=Red] at @s run summon minecraft:wolf ~ 117 ~ {NoAI:1b,NoGravity:1b,Tags:["Red"],Silent:1b}
+    execute as @a[scores={dropWolfEgg=1..},team=Blue] at @s run summon minecraft:wolf ~ 70 ~ {NoAI:1b,NoGravity:1b,Tags:["Blue"],Silent:1b}
     scoreboard players set @a dropWolfEgg 0
 
     execute as @a[team=Red] at @s positioned ~ ~-2 ~ if entity @e[type=minecraft:wolf,tag=Blue,distance=..0.5] run tellraw @a ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"] "},{"selector":"@s"},{"text":" was bitten! And can't move ","color":"gold"},{"text":"30","color":"dark_green"},{"text":" seconds!","color":"gold"}]
@@ -174,10 +175,14 @@ setblock 114 37 1210 minecraft:redstone_block
     execute as @a[scores={dogBite=1..}] run experience set @s 0 levels
     execute as @a[scores={dogBite=1..}] run scoreboard players remove @s dogBite 1
     #first aid kit
-    execute as @a[scores={dropMedKit=1..},team=Red] run tellraw @a[team=Red] ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"] "},{"selector":"@s"},{"text":" used ","color":"gold"},{"text":"First aid kit","color":"dark_green"},{"text":". And helped","color":"gold"},{"text":" ","color":"white"},{"selector":"@p","color":"white"}]
-    execute as @a[scores={dropMedKit=1..},team=Blue] run tellraw @a[team=Blue] ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"] "},{"selector":"@s"},{"text":" used ","color":"gold"},{"text":"First aid kit","color":"dark_green"},{"text":". And helped","color":"gold"},{"text":" ","color":"white"},{"selector":"@p","color":"white"}]
+    execute as @a[scores={dropMedKit=1..},team=Red] if entity @a[team=Red,scores={dogBite=1..}] at @a[team=Red,scores={dogBite=1..}] run tellraw @a[team=Red] ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"] "},{"selector":"@s"},{"text":" used ","color":"gold"},{"text":"First aid kit","color":"dark_green"},{"text":". And helped","color":"gold"},{"text":" ","color":"white"},{"selector":"@p","color":"white"}]
+    execute as @a[scores={dropMedKit=1..},team=Blue] if entity @a[team=Blue,scores={dogBite=1..}] at @a[team=Blue,scores={dogBite=1..}] run tellraw @a[team=Blue] ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"] "},{"selector":"@s"},{"text":" used ","color":"gold"},{"text":"First aid kit","color":"dark_green"},{"text":". And helped","color":"gold"},{"text":" ","color":"white"},{"selector":"@p","color":"white"}]
+    
+    execute as @a[scores={dropMedKit=1..},team=Red] unless entity @a[team=Red,scores={dogBite=1..}] run give @s minecraft:red_shulker_box{display:{Name:"[{\"text\":\"First aid kit\",\"color\":\"red\",\"italic\":\"false\"},{\"text\":\" [Press \",\"color\":\"white\",\"italic\":\"false\"},{\"keybind\":\"key.drop\",\"color\":\"white\",\"italic\":\"false\"},{\"text\":\" to use]\",\"color\":\"white\",\"italic\":\"false\"}]"}} 1
+    execute as @a[scores={dropMedKit=1..},team=Blue] unless entity @a[team=Blue,scores={dogBite=1..}] run give @s minecraft:red_shulker_box{display:{Name:"[{\"text\":\"First aid kit\",\"color\":\"red\",\"italic\":\"false\"},{\"text\":\" [Press \",\"color\":\"white\",\"italic\":\"false\"},{\"keybind\":\"key.drop\",\"color\":\"white\",\"italic\":\"false\"},{\"text\":\" to use]\",\"color\":\"white\",\"italic\":\"false\"}]"}} 1
 
-
+    scoreboard players set @a dropMedKit 0
+    
 
 
 
@@ -192,7 +197,7 @@ setblock 114 37 1210 minecraft:redstone_block
     execute if score status mw matches 2 if score distance mw matches 8 as @a at @s run fill ~-8 ~-8 ~-8 ~8 ~8 ~8 minecraft:barrier replace minecraft:black_concrete
     execute if score status mw matches 2 if score distance mw matches 9 as @a at @s run fill ~-9 ~-9 ~-9 ~9 ~9 ~9 minecraft:barrier replace minecraft:black_concrete
     execute if score status mw matches 2 if score distance mw matches 10 as @a at @s run fill ~-10 ~-10 ~-10 ~10 ~10 ~10 minecraft:barrier replace minecraft:black_concrete
-#armor in lobby
+#armor in lobby 
     execute if score status mw matches 0 as @a[scores={skin=1}] run replaceitem entity @s armor.head minecraft:player_head{"Unbreakable":true,HideFlags:63,Enchantments:[{id:"minecraft:binding_curse",lvl:1}],display:{Name:"{\"text\":\"Shark\"}"},SkullOwner:{Id:"cf46ffb6-497f-4554-9b5c-3f2d67b98582",Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzQ0N2U3ZTgyNzFmNTczOTY5ZjJkYTczNGM0MTI1ZjkzYjI4NjRmYjUxZGI2OWRhNWVjYmE3NDg3Y2Y4ODJiMCJ9fX0="}]}}} 1
     execute if score status mw matches 0 as @a[scores={skin=2}] run replaceitem entity @s armor.head minecraft:player_head{"Unbreakable":true,HideFlags:63,Enchantments:[{id:"minecraft:binding_curse",lvl:1}],display:{Name:"{\"text\":\"Wolf\"}"},SkullOwner:{Id:"fa5d3210-6e39-47ca-adb4-a3b2f0f966d9",Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjlkMWQzMTEzZWM0M2FjMjk2MWRkNTlmMjgxNzVmYjQ3MTg4NzNjNmM0NDhkZmNhODcyMjMxN2Q2NyJ9fX0="}]}}} 1
     execute if score status mw matches 0 as @a[scores={skin=3}] run replaceitem entity @s armor.head minecraft:player_head{"Unbreakable":true,HideFlags:63,Enchantments:[{id:"minecraft:binding_curse",lvl:1}],display:{Name:"{\"text\":\"Cat\"}"},SkullOwner:{Id:"604fdc9e-dff3-4318-8662-3be0fb9d66a7",Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmIyNTNmYzZiNjU2OTg4NDUzYTJkNzEzOGZjYTRkMWYyNzUyZjQ3NjkxZjBjNDM0ZTQzMjE4Mzc3MWNmZTEifX19"}]}}} 1
@@ -295,10 +300,10 @@ setblock 114 37 1210 minecraft:redstone_block
     #.319        2.15
     scoreboard players add 2tick var 1
     execute as @a[scores={xp=1..},level=0] at @s run summon minecraft:armor_stand ~ ~ ~ {Invisible:1b,Marker:1b,NoGravity:1b,Tags:["slowmover"]}
-    execute if score 2tick var matches 2.. as @a[level=..0] at @s at @e[type=minecraft:armor_stand,tag=slowmover] run tp @s ~ ~ ~
+    execute if score 2tick var matches 3 as @a[level=..0] at @s at @e[type=minecraft:armor_stand,tag=slowmover] run tp @s ~ ~ ~
     execute as @a[level=1..,scores={xp=0}] at @s run kill @e[type=minecraft:armor_stand,tag=slowmover,limit=1,sort=nearest]
     
-    execute if score 2tick var matches 2.. run scoreboard players set 2tick var 0
+    execute if score 2tick var matches 3.. run scoreboard players set 2tick var 0
     #function mw:walk/summon
     execute as @a store result score @s xp run experience query @s levels
 
