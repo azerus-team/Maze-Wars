@@ -1,4 +1,16 @@
-say Done
+
+# Maze Wars created on Minecraft Funcions 
+#
+# If you want edit our map we recommand fork our github repo and get pull request for us!
+# Please do not copy our map!
+# Have fun! 
+#
+# Created by Azerus Team, Coded by Sirboys, Built by BrandShei;
+
+say Maze Wars v0.5 installed!
+
+
+
 scoreboard objectives setdisplay sidebar
 #Scoreboard objectivies
 	scoreboard objectives add mw dummy
