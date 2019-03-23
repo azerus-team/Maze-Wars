@@ -5,6 +5,5 @@ execute positioned ~ ~1.58 ~-0.8001 as @e[limit=1,sort=nearest,type=minecraft:ar
 
 
 
-kill @e[tag=Slow,scores={slowLifeTime=100..}]
 
 

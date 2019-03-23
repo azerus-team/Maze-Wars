@@ -1,7 +1,7 @@
 
 # Maze Wars created on Minecraft Funcions 
 #
-# If you want edit our map we recommand fork our github repo and get pull request for us!
+# If you want edit our map we recommend fork our github repo and make pull request for us!
 # Please do not copy our map!
 # Have fun! 
 #
@@ -48,7 +48,7 @@ scoreboard objectives setdisplay sidebar
 		scoreboard players set §cRed: MazeWars 1
 		scoreboard players set §9Blue: MazeWars 0
 	scoreboard objectives add xp dummy
-	
+
 bossbar add timer {"text":"Game time: "}
 bossbar set timer color green
 bossbar set minecraft:timer value 100
