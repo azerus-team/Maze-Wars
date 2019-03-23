@@ -1,14 +1,24 @@
+#####################################################################################################
+# 																									#
+#					    _                              _____ _____    _    __  __					#
+#					   / \    _______ _ __ _   _ ___  |_   _| ____|  / \  |  \/  |					#
+#					  / _ \  |_  / _ \ '__| | | / __|   | | |  _|   / _ \ | |\/| |					#
+#					 / ___ \  / /  __/ |  | |_| \__ \   | | | |___ / ___ \| |  | |					#
+#					/_/   \_\/___\___|_|   \__,_|___/   |_| |_____/_/   \_\_|  |_|					#
+#																									#
+#																									#
+#																									#
+#  Maze Wars created on Minecraft Funcions 															#
+#																									#
+# If you want edit our map we recommend fork our github repo and make pull request for us!			#
+# Please do not copy our map!																		#
+# Have fun! 																						#
+#																									#
+# Created by Azerus Team, Coded by Sirboys, Built by BrandShei;										#
+#####################################################################################################
 
-# Maze Wars created on Minecraft Funcions 
-#
-# If you want edit our map we recommend fork our github repo and make pull request for us!
-# Please do not copy our map!
-# Have fun! 
-#
-# Created by Azerus Team, Coded by Sirboys, Built by BrandShei;
 
 say Maze Wars v0.5 installed!
-
 
 
 scoreboard objectives setdisplay sidebar
