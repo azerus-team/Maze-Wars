@@ -1,0 +1,12 @@
+data merge block 127 41 1213 {Text2:"[\"\",{\"text\":\"View distance: \",\"color\":\"aqua\"},{\"score\":{\"name\":\"distance\",\"objective\":\"mw\"},\"color\":\"dark_green\"}]"}
+execute if score status mw matches 0 run data merge block 118 41 1219 {Text2:"[{\"color\":\"dark_aqua\",\"text\":\"Status: \"},{\"color\":\"dark_green\",\"text\":\"Waiting\"}]"}
+execute if score status mw matches 1 run data merge block 118 41 1219 {Text2:"[{\"color\":\"dark_aqua\",\"text\":\"Status: \"},{\"color\":\"gold\",\"text\":\"Starting\"}]"}
+execute if score status mw matches 2 run data merge block 118 41 1219 {Text2:"[{\"color\":\"dark_aqua\",\"text\":\"Status: \"},{\"color\":\"red\",\"text\":\"In-game\"}]"}
+
+execute if score restamina mw matches 1 run data merge block 127 42 1213 {Text2:"{\"text\":\"Stamina recovery:\",\"color\":\"aqua\"}",Text3:"[\"\",{\"text\":\"0.5\",\"color\":\"dark_green\"},{\"text\":\" stamina/sec\",\"color\":\"dark_purple\"}]"}
+execute if score restamina mw matches 2 run data merge block 127 42 1213 {Text2:"{\"text\":\"Stamina recovery:\",\"color\":\"aqua\"}",Text3:"[\"\",{\"text\":\"0.75\",\"color\":\"dark_green\"},{\"text\":\" stamina/sec\",\"color\":\"dark_purple\"}]"}
+execute if score restamina mw matches 3 run data merge block 127 42 1213 {Text2:"{\"text\":\"Stamina recovery:\",\"color\":\"aqua\"}",Text3:"[\"\",{\"text\":\"1\",\"color\":\"dark_green\"},{\"text\":\" stamina/sec\",\"color\":\"dark_purple\"}]"}
+execute if score restamina mw matches 4 run data merge block 127 42 1213 {Text2:"{\"text\":\"Stamina recovery:\",\"color\":\"aqua\"}",Text3:"[\"\",{\"text\":\"1.25\",\"color\":\"dark_green\"},{\"text\":\" stamina/sec\",\"color\":\"dark_purple\"}]"}
+execute if score restamina mw matches 5 run data merge block 127 42 1213 {Text2:"{\"text\":\"Stamina recovery:\",\"color\":\"aqua\"}",Text3:"[\"\",{\"text\":\"1.5\",\"color\":\"dark_green\"},{\"text\":\" stamina/sec\",\"color\":\"dark_purple\"}]"}
+execute if score restamina mw matches 6 run data merge block 127 42 1213 {Text2:"{\"text\":\"Stamina recovery:\",\"color\":\"aqua\"}",Text3:"[\"\",{\"text\":\"1.75\",\"color\":\"dark_green\"},{\"text\":\" stamina/sec\",\"color\":\"dark_purple\"}]"}
+execute if score restamina mw matches 7 run data merge block 127 42 1213 {Text2:"{\"text\":\"Stamina recovery:\",\"color\":\"aqua\"}",Text3:"[\"\",{\"text\":\"2\",\"color\":\"dark_green\"},{\"text\":\" stamina/sec\",\"color\":\"dark_purple\"}]"}

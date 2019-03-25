@@ -1,10 +1,15 @@
+
+
 #effects
-    effect give @a minecraft:weakness 100000 255 true
-    effect give @a minecraft:resistance 100000 255 true
-    effect give @a minecraft:night_vision 100000 255 true
-    effect give @a minecraft:saturation 100000 255 true
-    execute if score status mw matches 2 run effect give @a[team=!] minecraft:invisibility 1 255 true
-    execute if score status mw matches 2 run effect give @a[team=!] minecraft:jump_boost 1 128 true
+function mw:loop/effects
+function mw:loop/mapselector
+function mw:loop/settings
+function mw:loop/teamselector
+function mw:loop/goldblock_effects
+function mw:loop/bowgame
+function mw:loop/game_handlers
+function mw:loop/lobby
+
 
 gamemode adventure @a
 
@@ -21,167 +26,13 @@ bossbar set timer players @a
 
 execute as @a unless score @s skin matches 1..6 run scoreboard players set @s skin 1
 
-#map selector
-    execute if score map mw matches 0 run data merge block 114 36 1210 {metadata:"",mirror:"NONE",ignoreEntities:0b,powered:0b,seed:0L,author:"AzerusTeam",rotation:"NONE",posX:1,mode:"LOAD",posY:1,sizeX:7,posZ:0,integrity:1.0f,showair:1b,name:"premap:classic",sizeY:2,sizeZ:7,showboundingbox:1b}
-    execute if score map mw matches 0 run data merge block 127 40 1213 {Text1:"[{\"color\":\"aqua\",\"text\":\"Map: \"},{\"text\":\"Classic\",\"color\":\"dark_green\"}]"}
-    execute if score map mw matches 1 run data merge block 114 36 1210 {metadata:"",mirror:"NONE",ignoreEntities:0b,powered:0b,seed:0L,author:"AzerusTeam",rotation:"NONE",posX:1,mode:"LOAD",posY:1,sizeX:7,posZ:0,integrity:1.0f,showair:1b,name:"premap:Old End",sizeY:2,sizeZ:7,showboundingbox:1b}
-    execute if score map mw matches 1 run data merge block 127 40 1213 {Text1:"[{\"color\":\"aqua\",\"text\":\"Map: \"},{\"text\":\"Old End\",\"color\":\"dark_green\"}]"}
-    execute if score map mw matches 2 run data merge block 114 36 1210 {metadata:"",mirror:"NONE",ignoreEntities:0b,powered:0b,seed:0L,author:"AzerusTeam",rotation:"NONE",posX:1,mode:"LOAD",posY:1,sizeX:7,posZ:0,integrity:1.0f,showair:1b,name:"premap:cruise",sizeY:2,sizeZ:7,showboundingbox:1b}
-    execute if score map mw matches 2 run data merge block 127 40 1213 {Text1:"[{\"color\":\"aqua\",\"text\":\"Map: \"},{\"text\":\"Cruise\",\"color\":\"dark_green\"}]"}
-    execute if score map mw matches 3 run data merge block 114 36 1210 {metadata:"",mirror:"NONE",ignoreEntities:0b,powered:0b,seed:0L,author:"AzerusTeam",rotation:"NONE",posX:1,mode:"LOAD",posY:1,sizeX:7,posZ:0,integrity:1.0f,showair:1b,name:"premap:dagobah",sizeY:2,sizeZ:7,showboundingbox:1b}
-    execute if score map mw matches 3 run data merge block 127 40 1213 {Text1:"[{\"color\":\"aqua\",\"text\":\"Map: \"},{\"text\":\"Swamp\",\"color\":\"dark_green\"}]"}
-    execute if score map mw matches 4 run data merge block 114 36 1210 {metadata:"",mirror:"NONE",ignoreEntities:0b,powered:0b,seed:0L,author:"AzerusTeam",rotation:"NONE",posX:1,mode:"LOAD",posY:1,sizeX:7,posZ:0,integrity:1.0f,showair:1b,name:"premap:daksan",sizeY:2,sizeZ:7,showboundingbox:1b}
-    execute if score map mw matches 4 run data merge block 127 40 1213 {Text1:"[{\"color\":\"aqua\",\"text\":\"Map: \"},{\"text\":\"Daksan\",\"color\":\"dark_green\"}]"}
-    execute if score map mw matches 5 run data merge block 114 36 1210 {metadata:"",mirror:"NONE",ignoreEntities:0b,powered:0b,seed:0L,author:"AzerusTeam",rotation:"NONE",posX:1,mode:"LOAD",posY:1,sizeX:7,posZ:0,integrity:1.0f,showair:1b,name:"premap:end",sizeY:2,sizeZ:7,showboundingbox:1b}
-    execute if score map mw matches 5 run data merge block 127 40 1213 {Text1:"[{\"color\":\"aqua\",\"text\":\"Map: \"},{\"text\":\"New End\",\"color\":\"dark_green\"}]"}
-    execute if score map mw matches 6 run data merge block 114 36 1210 {metadata:"",mirror:"NONE",ignoreEntities:0b,powered:0b,seed:0L,author:"AzerusTeam",rotation:"NONE",posX:1,mode:"LOAD",posY:1,sizeX:7,posZ:0,integrity:1.0f,showair:1b,name:"premap:hoth",sizeY:2,sizeZ:7,showboundingbox:1b}
-    execute if score map mw matches 6 run data merge block 127 40 1213 {Text1:"[{\"color\":\"aqua\",\"text\":\"Map: \"},{\"text\":\"Modern\",\"color\":\"dark_green\"}]"}
-    execute if score map mw matches 7 run data merge block 114 36 1210 {metadata:"",mirror:"NONE",ignoreEntities:0b,powered:0b,seed:0L,author:"AzerusTeam",rotation:"NONE",posX:1,mode:"LOAD",posY:1,sizeX:7,posZ:0,integrity:1.0f,showair:1b,name:"premap:korriban",sizeY:2,sizeZ:7,showboundingbox:1b}
-    execute if score map mw matches 7 run data merge block 127 40 1213 {Text1:"[{\"color\":\"aqua\",\"text\":\"Map: \"},{\"text\":\"Hell\",\"color\":\"dark_green\"}]"}
-    execute if score map mw matches 8 run data merge block 114 36 1210 {metadata:"",mirror:"NONE",ignoreEntities:0b,powered:0b,seed:0L,author:"AzerusTeam",rotation:"NONE",posX:1,mode:"LOAD",posY:1,sizeX:7,posZ:0,integrity:1.0f,showair:1b,name:"premap:library",sizeY:2,sizeZ:7,showboundingbox:1b}
-    execute if score map mw matches 8 run data merge block 127 40 1213 {Text1:"[{\"color\":\"aqua\",\"text\":\"Map: \"},{\"text\":\"Library\",\"color\":\"dark_green\"}]"}
-    execute if score map mw matches 9 run data merge block 114 36 1210 {metadata:"",mirror:"NONE",ignoreEntities:0b,powered:0b,seed:0L,author:"AzerusTeam",rotation:"NONE",posX:1,mode:"LOAD",posY:1,sizeX:7,posZ:0,integrity:1.0f,showair:1b,name:"premap:malachor",sizeY:2,sizeZ:7,showboundingbox:1b}
-    execute if score map mw matches 9 run data merge block 127 40 1213 {Text1:"[{\"color\":\"aqua\",\"text\":\"Map: \"},{\"text\":\"Acid\",\"color\":\"dark_green\"}]"}
-    execute if score map mw matches 10 run data merge block 114 36 1210 {metadata:"",mirror:"NONE",ignoreEntities:0b,powered:0b,seed:0L,author:"AzerusTeam",rotation:"NONE",posX:1,mode:"LOAD",posY:1,sizeX:7,posZ:0,integrity:1.0f,showair:1b,name:"premap:manaan",sizeY:2,sizeZ:7,showboundingbox:1b}
-    execute if score map mw matches 10 run data merge block 127 40 1213 {Text1:"[{\"color\":\"aqua\",\"text\":\"Map: \"},{\"text\":\"Ocean\",\"color\":\"dark_green\"}]"}
-    execute if score map mw matches 11 run data merge block 114 36 1210 {metadata:"",mirror:"NONE",ignoreEntities:0b,powered:0b,seed:0L,author:"AzerusTeam",rotation:"NONE",posX:1,mode:"LOAD",posY:1,sizeX:7,posZ:0,integrity:1.0f,showair:1b,name:"premap:melon",sizeY:2,sizeZ:7,showboundingbox:1b}
-    execute if score map mw matches 11 run data merge block 127 40 1213 {Text1:"[{\"color\":\"aqua\",\"text\":\"Map: \"},{\"text\":\"Watermelons\",\"color\":\"dark_green\"}]"}
-    execute if score map mw matches 12 run data merge block 114 36 1210 {metadata:"",mirror:"NONE",ignoreEntities:0b,powered:0b,seed:0L,author:"AzerusTeam",rotation:"NONE",posX:1,mode:"LOAD",posY:1,sizeX:7,posZ:0,integrity:1.0f,showair:1b,name:"premap:naboo",sizeY:2,sizeZ:7,showboundingbox:1b}
-    execute if score map mw matches 12 run data merge block 127 40 1213 {Text1:"[{\"color\":\"aqua\",\"text\":\"Map: \"},{\"text\":\"Prismarine\",\"color\":\"dark_green\"}]"}
-    execute if score map mw matches 13 run data merge block 114 36 1210 {metadata:"",mirror:"NONE",ignoreEntities:0b,powered:0b,seed:0L,author:"AzerusTeam",rotation:"NONE",posX:1,mode:"LOAD",posY:1,sizeX:7,posZ:0,integrity:1.0f,showair:1b,name:"premap:nether",sizeY:2,sizeZ:7,showboundingbox:1b}
-    execute if score map mw matches 13 run data merge block 127 40 1213 {Text1:"[{\"color\":\"aqua\",\"text\":\"Map: \"},{\"text\":\"Nether\",\"color\":\"dark_green\"}]"}
-    execute if score map mw matches 14 run data merge block 114 36 1210 {metadata:"",mirror:"NONE",ignoreEntities:0b,powered:0b,seed:0L,author:"AzerusTeam",rotation:"NONE",posX:1,mode:"LOAD",posY:1,sizeX:7,posZ:0,integrity:1.0f,showair:1b,name:"premap:star",sizeY:2,sizeZ:7,showboundingbox:1b}
-    execute if score map mw matches 14 run data merge block 127 40 1213 {Text1:"[{\"color\":\"aqua\",\"text\":\"Map: \"},{\"text\":\"Star\",\"color\":\"dark_green\"}]"}
-    execute if score map mw matches 15 run data merge block 114 36 1210 {metadata:"",mirror:"NONE",ignoreEntities:0b,powered:0b,seed:0L,author:"AzerusTeam",rotation:"NONE",posX:1,mode:"LOAD",posY:1,sizeX:7,posZ:0,integrity:1.0f,showair:1b,name:"premap:stones",sizeY:2,sizeZ:7,showboundingbox:1b}
-    execute if score map mw matches 15 run data merge block 127 40 1213 {Text1:"[{\"color\":\"aqua\",\"text\":\"Map: \"},{\"text\":\"Stones\",\"color\":\"dark_green\"}]"}
-    execute if score map mw matches 16 run data merge block 114 36 1210 {metadata:"",mirror:"NONE",ignoreEntities:0b,powered:0b,seed:0L,author:"AzerusTeam",rotation:"NONE",posX:1,mode:"LOAD",posY:1,sizeX:7,posZ:0,integrity:1.0f,showair:1b,name:"premap:tatooine",sizeY:2,sizeZ:7,showboundingbox:1b}
-    execute if score map mw matches 16 run data merge block 127 40 1213 {Text1:"[{\"color\":\"aqua\",\"text\":\"Map: \"},{\"text\":\"Desert\",\"color\":\"dark_green\"}]"}
-    execute if score map mw matches 17 run data merge block 114 36 1210 {metadata:"",mirror:"NONE",ignoreEntities:0b,powered:0b,seed:0L,author:"AzerusTeam",rotation:"NONE",posX:1,mode:"LOAD",posY:1,sizeX:7,posZ:0,integrity:1.0f,showair:1b,name:"premap:village",sizeY:2,sizeZ:7,showboundingbox:1b}
-    execute if score map mw matches 17 run data merge block 127 40 1213 {Text1:"[{\"color\":\"aqua\",\"text\":\"Map: \"},{\"text\":\"Village\",\"color\":\"dark_green\"}]"}
-    execute if score map mw matches 18 run data merge block 114 36 1210 {metadata:"",mirror:"NONE",ignoreEntities:0b,powered:0b,seed:0L,author:"AzerusTeam",rotation:"NONE",posX:1,mode:"LOAD",posY:1,sizeX:7,posZ:0,integrity:1.0f,showair:1b,name:"premap:winter",sizeY:2,sizeZ:7,showboundingbox:1b}
-    execute if score map mw matches 18 run data merge block 127 40 1213 {Text1:"[{\"color\":\"aqua\",\"text\":\"Map: \"},{\"text\":\"Winter\",\"color\":\"dark_green\"}]"}
-    execute if score map mw matches 19 run data merge block 114 36 1210 {metadata:"",mirror:"NONE",ignoreEntities:0b,powered:0b,seed:0L,author:"AzerusTeam",rotation:"NONE",posX:1,mode:"LOAD",posY:1,sizeX:7,posZ:0,integrity:1.0f,showair:1b,name:"premap:woodland",sizeY:2,sizeZ:7,showboundingbox:1b}
-    execute if score map mw matches 19 run data merge block 127 40 1213 {Text1:"[{\"color\":\"aqua\",\"text\":\"Map: \"},{\"text\":\"Woodland\",\"color\":\"dark_green\"}]"}
-
-    execute if score map mw matches 20.. run scoreboard players set map mw 0
-    execute if score map mw matches ..-1 run scoreboard players set map mw 19
-
-    execute if score restamina mw matches 8.. run scoreboard players set restamina mw 1
-
-    execute if score distance mw matches 11.. run scoreboard players set distance mw 2
-    execute if score distance mw matches ..1 run scoreboard players set distance mw 10
-#signs
-    data merge block 127 41 1213 {Text2:"[\"\",{\"text\":\"View distance: \",\"color\":\"aqua\"},{\"score\":{\"name\":\"distance\",\"objective\":\"mw\"},\"color\":\"dark_green\"}]"}
-    execute if score status mw matches 0 run data merge block 118 41 1219 {Text2:"[{\"color\":\"dark_aqua\",\"text\":\"Status: \"},{\"color\":\"dark_green\",\"text\":\"Waiting\"}]"}
-    execute if score status mw matches 1 run data merge block 118 41 1219 {Text2:"[{\"color\":\"dark_aqua\",\"text\":\"Status: \"},{\"color\":\"gold\",\"text\":\"Starting\"}]"}
-    execute if score status mw matches 2 run data merge block 118 41 1219 {Text2:"[{\"color\":\"dark_aqua\",\"text\":\"Status: \"},{\"color\":\"red\",\"text\":\"In-game\"}]"}
-
-    execute if score restamina mw matches 1 run data merge block 127 42 1213 {Text2:"{\"text\":\"Stamina recovery:\",\"color\":\"aqua\"}",Text3:"[\"\",{\"text\":\"0.5\",\"color\":\"dark_green\"},{\"text\":\" stamina/sec\",\"color\":\"dark_purple\"}]"}
-    execute if score restamina mw matches 2 run data merge block 127 42 1213 {Text2:"{\"text\":\"Stamina recovery:\",\"color\":\"aqua\"}",Text3:"[\"\",{\"text\":\"0.75\",\"color\":\"dark_green\"},{\"text\":\" stamina/sec\",\"color\":\"dark_purple\"}]"}
-    execute if score restamina mw matches 3 run data merge block 127 42 1213 {Text2:"{\"text\":\"Stamina recovery:\",\"color\":\"aqua\"}",Text3:"[\"\",{\"text\":\"1\",\"color\":\"dark_green\"},{\"text\":\" stamina/sec\",\"color\":\"dark_purple\"}]"}
-    execute if score restamina mw matches 4 run data merge block 127 42 1213 {Text2:"{\"text\":\"Stamina recovery:\",\"color\":\"aqua\"}",Text3:"[\"\",{\"text\":\"1.25\",\"color\":\"dark_green\"},{\"text\":\" stamina/sec\",\"color\":\"dark_purple\"}]"}
-    execute if score restamina mw matches 5 run data merge block 127 42 1213 {Text2:"{\"text\":\"Stamina recovery:\",\"color\":\"aqua\"}",Text3:"[\"\",{\"text\":\"1.5\",\"color\":\"dark_green\"},{\"text\":\" stamina/sec\",\"color\":\"dark_purple\"}]"}
-    execute if score restamina mw matches 6 run data merge block 127 42 1213 {Text2:"{\"text\":\"Stamina recovery:\",\"color\":\"aqua\"}",Text3:"[\"\",{\"text\":\"1.75\",\"color\":\"dark_green\"},{\"text\":\" stamina/sec\",\"color\":\"dark_purple\"}]"}
-    execute if score restamina mw matches 7 run data merge block 127 42 1213 {Text2:"{\"text\":\"Stamina recovery:\",\"color\":\"aqua\"}",Text3:"[\"\",{\"text\":\"2\",\"color\":\"dark_green\"},{\"text\":\" stamina/sec\",\"color\":\"dark_purple\"}]"}
 
 kill @e[type=item]
 
 setblock 114 37 1210 minecraft:air
 setblock 114 37 1210 minecraft:redstone_block
 
-#Team selector  
-    execute as @a[scores={leave=1..}] run team leave @s
-    execute as @a[scores={leave=1..}] run tp @s 118.5 42 1197
-    execute as @a[scores={leave=1..}] run clear @s
 
-    execute as @a unless entity @s[nbt={Inventory:[{id:"minecraft:red_concrete"}]}] run clear @s minecraft:red_concrete
-    execute as @a unless entity @s[nbt={Inventory:[{id:"minecraft:blue_concrete"}]}] run clear @s minecraft:blue_concrete
-    execute as @a unless entity @s[nbt={Inventory:[{id:"minecraft:barrier"}]}] run clear @s minecraft:barrier
-
-    execute if score status mw matches 0 run replaceitem entity @a hotbar.0 minecraft:blue_concrete{display:{Name:"[\"\",{\"text\":\"Blue\",\"color\":\"blue\",\"italic\":false},{\"text\":\" team\",\"color\":\"gold\",\"italic\":false},{\"text\":\" [Press \",\"color\":\"white\",\"italic\":false},{\"keybind\":\"key.drop\",\"italic\":false},{\"text\":\" to join]\",\"color\":\"white\",\"italic\":false}]"}}
-    execute if score status mw matches 0 run replaceitem entity @a hotbar.1 minecraft:red_concrete{display:{Name:"[\"\",{\"text\":\"Red\",\"color\":\"red\",\"italic\":false},{\"text\":\" team\",\"color\":\"gold\",\"italic\":false},{\"text\":\" [Press \",\"color\":\"white\",\"italic\":false},{\"keybind\":\"key.drop\",\"italic\":false},{\"text\":\" to join]\",\"color\":\"white\",\"italic\":false}]"}}
-    execute if score status mw matches 0 run replaceitem entity @a hotbar.8 minecraft:barrier{display:{Name:"[\"\",{\"text\":\"Leave team\",\"color\":\"gold\",\"italic\":false},{\"text\":\" [Press \",\"color\":\"white\",\"italic\":false},{\"keybind\":\"key.drop\",\"italic\":false},{\"text\":\" to leave]\",\"color\":\"white\",\"italic\":false}]"}}
-
-    execute as @a[scores={joinRed=1..}] run team join Red @s
-    execute as @a[scores={joinBlue=1..}] run team join Blue @s
-    execute as @a[scores={leaveTeam=1..}] run team leave @s
-    execute as @a[scores={joinRed=1..}] run tellraw @s ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"] "},{"text":"You joined the ","color":"gold"},{"text":"Red","color":"red"},{"text":" team!","color":"gold"}]
-    execute as @a[scores={joinBlue=1..}] run tellraw @s ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"] "},{"text":"You joined the ","color":"gold"},{"text":"Blue","color":"blue"},{"text":" team!","color":"gold"}]
-    execute as @a[scores={leaveTeam=1..}] run tellraw @s ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"] "},{"text":"You left your team.","color":"gold"}]
-
-    scoreboard players set @a joinRed 0
-    scoreboard players set @a joinBlue 0
-    scoreboard players set @a leaveTeam 0
-
-    execute as @a[scores={reJoin=1..}] run tp @s 118 42 1197 0 0
-    execute as @a[scores={reJoin=1..}] run team leave @s
-    execute as @a[scores={reJoin=1..}] run clear @s
-    scoreboard players set @a reJoin 0
-
-
-
-#gold block
-    #torch
-    execute if score rTorch mw matches 1.. run scoreboard players remove rTorch mw 1
-    execute if score bTorch mw matches 1.. run scoreboard players remove bTorch mw 1
-
-    execute as @a[team=Red] if score distance mw matches 2 if score rTorch mw matches 1.. at @s run fill ~-5 ~-5 ~-5 ~5 ~5 ~5 minecraft:barrier replace minecraft:black_concrete
-    execute as @a[team=Red] if score distance mw matches 3 if score rTorch mw matches 1.. at @s run fill ~-6 ~-6 ~-6 ~6 ~6 ~6 minecraft:barrier replace minecraft:black_concrete
-    execute as @a[team=Red] if score distance mw matches 4 if score rTorch mw matches 1.. at @s run fill ~-7 ~-7 ~-7 ~7 ~7 ~7 minecraft:barrier replace minecraft:black_concrete
-    execute as @a[team=Red] if score distance mw matches 5 if score rTorch mw matches 1.. at @s run fill ~-8 ~-8 ~-8 ~8 ~8 ~8 minecraft:barrier replace minecraft:black_concrete
-    execute as @a[team=Red] if score distance mw matches 6 if score rTorch mw matches 1.. at @s run fill ~-9 ~-9 ~-9 ~9 ~9 ~9 minecraft:barrier replace minecraft:black_concrete
-    execute as @a[team=Red] if score distance mw matches 7 if score rTorch mw matches 1.. at @s run fill ~-10 ~-10 ~-10 ~10 ~10 ~10 minecraft:barrier replace minecraft:black_concrete
-    execute as @a[team=Red] if score distance mw matches 8 if score rTorch mw matches 1.. at @s run fill ~-11 ~-11 ~-11 ~11 ~11 ~11 minecraft:barrier replace minecraft:black_concrete
-    execute as @a[team=Red] if score distance mw matches 9 if score rTorch mw matches 1.. at @s run fill ~-12 ~-12 ~-12 ~12 ~12 ~12 minecraft:barrier replace minecraft:black_concrete
-    execute as @a[team=Red] if score distance mw matches 10 if score rTorch mw matches 1.. at @s run fill ~-13 ~-13 ~-13 ~13 ~13 ~13 minecraft:barrier replace minecraft:black_concrete
-
-    execute as @a[team=Blue] if score distance mw matches 2 if score bTorch mw matches 1.. at @s run fill ~-5 ~-5 ~-5 ~5 ~5 ~5 minecraft:barrier replace minecraft:black_concrete
-    execute as @a[team=Blue] if score distance mw matches 3 if score bTorch mw matches 1.. at @s run fill ~-6 ~-6 ~-6 ~6 ~6 ~6 minecraft:barrier replace minecraft:black_concrete
-    execute as @a[team=Blue] if score distance mw matches 4 if score bTorch mw matches 1.. at @s run fill ~-7 ~-7 ~-7 ~7 ~7 ~7 minecraft:barrier replace minecraft:black_concrete
-    execute as @a[team=Blue] if score distance mw matches 5 if score bTorch mw matches 1.. at @s run fill ~-8 ~-8 ~-8 ~8 ~8 ~8 minecraft:barrier replace minecraft:black_concrete
-    execute as @a[team=Blue] if score distance mw matches 6 if score bTorch mw matches 1.. at @s run fill ~-9 ~-9 ~-9 ~9 ~9 ~9 minecraft:barrier replace minecraft:black_concrete
-    execute as @a[team=Blue] if score distance mw matches 7 if score bTorch mw matches 1.. at @s run fill ~-10 ~-10 ~-10 ~10 ~10 ~10 minecraft:barrier replace minecraft:black_concrete
-    execute as @a[team=Blue] if score distance mw matches 8 if score bTorch mw matches 1.. at @s run fill ~-11 ~-11 ~-11 ~11 ~11 ~11 minecraft:barrier replace minecraft:black_concrete
-    execute as @a[team=Blue] if score distance mw matches 9 if score bTorch mw matches 1.. at @s run fill ~-12 ~-12 ~-12 ~12 ~12 ~12 minecraft:barrier replace minecraft:black_concrete
-    execute as @a[team=Blue] if score distance mw matches 10 if score bTorch mw matches 1.. at @s run fill ~-13 ~-13 ~-13 ~13 ~13 ~13 minecraft:barrier replace minecraft:black_concrete
-    #tnt
-    execute as @a[scores={tntDrop=1..}] unless entity @s[x=-1997,y=-1,z=-1996,dx=56,dz=56,dy=200] run tellraw @s ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"] "},{"text":"T","color":"red"},{"text":"N","color":"white"},{"text":"T","color":"red"},{"text":" cannot be used on the edge of a maze.","color":"gold"}]
-    execute as @a[scores={tntDrop=1..}] unless entity @s[x=-1997,y=-1,z=-1996,dx=56,dz=56,dy=200] run give @s minecraft:tnt{display:{Name:"[{\"text\":\"T\",\"color\":\"red\",\"italic\":\"false\"},{\"text\":\"N\",\"color\":\"white\",\"italic\":\"false\"},{\"text\":\"T\",\"color\":\"red\",\"italic\":\"false\"},{\"text\":\" [Press \",\"color\":\"white\",\"italic\":\"false\"},{\"keybind\":\"key.drop\",\"color\":\"white\",\"italic\":\"false\"},{\"text\":\" to use]\",\"color\":\"white\",\"italic\":\"false\"}]"}} 1
-    execute as @a[scores={tntDrop=1..},x=-1997,y=-1,z=-1996,dx=56,dz=56,dy=200] at @s run fill ~1 72 ~1 ~-1 72 ~-1 minecraft:air
-    execute as @a[scores={tntDrop=1..},x=-1997,y=-1,z=-1996,dx=56,dz=56,dy=200] at @s run fill ~1 70 ~1 ~-1 70 ~-1 minecraft:air
-    execute as @a[scores={tntDrop=1..},x=-1997,y=-1,z=-1996,dx=56,dz=56,dy=200] at @s run fill ~1 117 ~1 ~-1 117 ~-1 minecraft:air
-    execute as @a[scores={tntDrop=1..},x=-1997,y=-1,z=-1996,dx=56,dz=56,dy=200] at @s run fill ~1 119 ~1 ~-1 119 ~-1 minecraft:air
-    scoreboard players set @a tntDrop 0
-
-    execute as @a[scores={inc_sacDrop=1..},team=Red] at @r[team=Blue] run function mw:blind
-    execute as @a[scores={inc_sacDrop=1..},team=Blue] at @r[team=Red] run function mw:blind
-    scoreboard players set @a inc_sacDrop 0
-    #dog
-    execute as @a[scores={dropWolfEgg=1..},team=Red] at @s run summon minecraft:wolf ~ 70 ~ {NoAI:1b,NoGravity:1b,Tags:["Red"],Silent:1b}
-    execute as @a[scores={dropWolfEgg=1..},team=Blue] at @s run summon minecraft:wolf ~ 117 ~ {NoAI:1b,NoGravity:1b,Tags:["Blue"],Silent:1b}
-
-    execute as @a[scores={dropWolfEgg=1..},team=Red] at @s run summon minecraft:wolf ~ 117 ~ {NoAI:1b,NoGravity:1b,Tags:["Red"],Silent:1b}
-    execute as @a[scores={dropWolfEgg=1..},team=Blue] at @s run summon minecraft:wolf ~ 70 ~ {NoAI:1b,NoGravity:1b,Tags:["Blue"],Silent:1b}
-    scoreboard players set @a dropWolfEgg 0
-
-    execute as @a[team=Red] at @s positioned ~ ~-2 ~ if entity @e[type=minecraft:wolf,tag=Blue,distance=..0.5] run tellraw @a ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"] "},{"selector":"@s"},{"text":" was bitten! And can't move ","color":"gold"},{"text":"30","color":"dark_green"},{"text":" seconds!","color":"gold"}]
-    execute as @a[team=Blue] at @s positioned ~ ~-2 ~ if entity @e[type=minecraft:wolf,tag=Red,distance=..0.5] run tellraw @a ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"] "},{"selector":"@s"},{"text":" was bitten! And can't move ","color":"gold"},{"text":"30","color":"dark_green"},{"text":" seconds!","color":"gold"}]
-    
-    execute as @a[team=Red] at @s positioned ~ ~-2 ~ if entity @e[type=minecraft:wolf,tag=Blue,distance=..0.5] run scoreboard players set @s dogBite 600
-    execute as @a[team=Blue] at @s positioned ~ ~-2 ~ if entity @e[type=minecraft:wolf,tag=Red,distance=..0.5] run scoreboard players set @s dogBite 600
-    
-    execute as @a[team=Red] at @s positioned ~ ~-2 ~ if entity @e[type=minecraft:wolf,tag=Blue,distance=..0.5] run kill @e[type=minecraft:wolf,distance=..0.5,sort=nearest,limit=1,tag=Blue]
-    execute as @a[team=Blue] at @s positioned ~ ~-2 ~ if entity @e[type=minecraft:wolf,tag=Red,distance=..0.5] run kill @e[type=minecraft:wolf,distance=..0.5,sort=nearest,limit=1,tag=Red]
-    execute as @a[scores={dogBite=1..}] run experience set @s 0 levels
-    execute as @a[scores={dogBite=1..}] run scoreboard players remove @s dogBite 1
-    #first aid kit
-    execute as @a[scores={dropMedKit=1..},team=Red] if entity @a[team=Red,scores={dogBite=1..}] at @a[team=Red,scores={dogBite=1..}] run tellraw @a[team=Red] ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"] "},{"selector":"@s"},{"text":" used ","color":"gold"},{"text":"First aid kit","color":"dark_green"},{"text":". And helped","color":"gold"},{"text":" ","color":"white"},{"selector":"@p","color":"white"}]
-    execute as @a[scores={dropMedKit=1..},team=Blue] if entity @a[team=Blue,scores={dogBite=1..}] at @a[team=Blue,scores={dogBite=1..}] run tellraw @a[team=Blue] ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"] "},{"selector":"@s"},{"text":" used ","color":"gold"},{"text":"First aid kit","color":"dark_green"},{"text":". And helped","color":"gold"},{"text":" ","color":"white"},{"selector":"@p","color":"white"}]
-    
-    execute as @a[scores={dropMedKit=1..},team=Red] unless entity @a[team=Red,scores={dogBite=1..}] run give @s minecraft:red_shulker_box{display:{Name:"[{\"text\":\"First aid kit\",\"color\":\"red\",\"italic\":\"false\"},{\"text\":\" [Press \",\"color\":\"white\",\"italic\":\"false\"},{\"keybind\":\"key.drop\",\"color\":\"white\",\"italic\":\"false\"},{\"text\":\" to use]\",\"color\":\"white\",\"italic\":\"false\"}]"}} 1
-    execute as @a[scores={dropMedKit=1..},team=Blue] unless entity @a[team=Blue,scores={dogBite=1..}] run give @s minecraft:red_shulker_box{display:{Name:"[{\"text\":\"First aid kit\",\"color\":\"red\",\"italic\":\"false\"},{\"text\":\" [Press \",\"color\":\"white\",\"italic\":\"false\"},{\"keybind\":\"key.drop\",\"color\":\"white\",\"italic\":\"false\"},{\"text\":\" to use]\",\"color\":\"white\",\"italic\":\"false\"}]"}} 1
-
-    scoreboard players set @a dropMedKit 0
 
 
 #view distance
@@ -194,68 +45,7 @@ setblock 114 37 1210 minecraft:redstone_block
     execute if score status mw matches 2 if score distance mw matches 8 as @a at @s run fill ~-8 ~-8 ~-8 ~8 ~8 ~8 minecraft:barrier replace minecraft:black_concrete
     execute if score status mw matches 2 if score distance mw matches 9 as @a at @s run fill ~-9 ~-9 ~-9 ~9 ~9 ~9 minecraft:barrier replace minecraft:black_concrete
     execute if score status mw matches 2 if score distance mw matches 10 as @a at @s run fill ~-10 ~-10 ~-10 ~10 ~10 ~10 minecraft:barrier replace minecraft:black_concrete
-#armor in lobby 
-    execute if score status mw matches 0 as @a[scores={skin=1}] run replaceitem entity @s armor.head minecraft:player_head{"Unbreakable":true,HideFlags:63,Enchantments:[{id:"minecraft:binding_curse",lvl:1}],display:{Name:"{\"text\":\"Vampire\"}"},SkullOwner:{Id:"a8701efe-e48e-4ebf-a844-bc9c79b3d051",Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOGQ0NDc1NmUwYjRlY2U4ZDc0NjI5NmEzZDVlMjk3ZTE0MTVmNGJhMTc2NDdmZmUyMjgzODUzODNkMTYxYTkifX19"}]}}} 1
-    execute if score status mw matches 0 as @a[scores={skin=2}] run replaceitem entity @s armor.head minecraft:player_head{"Unbreakable":true,HideFlags:63,Enchantments:[{id:"minecraft:binding_curse",lvl:1}],display:{Name:"{\"text\":\"Witch\"}"},SkullOwner:{Id:"fd9d3622-caaa-4aef-8d02-4df863f85f0a",Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzg0MTJlZWRlMjhiNDY0ZGVhNTY4M2I0OTdmNzAwODUzNWNjNjIzM2RhZDg3NDEyNmFlNDg2MWQ1NjE2MmE5NiJ9fX0="}]}}} 1
-    execute if score status mw matches 0 as @a[scores={skin=3}] run replaceitem entity @s armor.head minecraft:player_head{"Unbreakable":true,HideFlags:63,Enchantments:[{id:"minecraft:binding_curse",lvl:1}],display:{Name:"{\"text\":\"Creeper\"}"},SkullOwner:{Id:"a2fb385c-1ce0-4cf8-a8b9-15731e40abcc",Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODU2ZWY0YTkxNWJiYjc3ZDhhMWYwYmNmMTc4MjFhMjg1NzQ4NzMwOThlMmJjZTg1MWU0YmU1YTRkZDUzNyJ9fX0="}]}}} 1
-    execute if score status mw matches 0 as @a[scores={skin=4}] run replaceitem entity @s armor.head minecraft:player_head{"Unbreakable":true,HideFlags:63,Enchantments:[{id:"minecraft:binding_curse",lvl:1}],display:{Name:"{\"text\":\"Elder Guardian\"}"},SkullOwner:{Id:"72d6b3b0-f612-42bb-b579-dc943ade53ae",Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDM0MGEyNjhmMjVmZDVjYzI3NmNhMTQ3YTg0NDZiMjYzMGE1NTg2N2EyMzQ5ZjdjYTEwN2MyNmViNTg5OTEifX19"}]}}} 1
-    execute if score status mw matches 0 as @a[scores={skin=5}] run replaceitem entity @s armor.head minecraft:player_head{"Unbreakable":true,HideFlags:63,Enchantments:[{id:"minecraft:binding_curse",lvl:1}],display:{Name:"{\"text\":\"Wolf\"}"},SkullOwner:{Id:"95ac4665-6022-4188-98f8-8a4e640f32c9",Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDM1OTUzN2MxNTUzNGY2MWMxY2Q4ODZiYzExODc3NGVkMjIyODBlN2NkYWI2NjEzODcwMTYwYWFkNGNhMzkifX19"}]}}} 1
-    execute if score status mw matches 0 as @a[scores={skin=6}] run replaceitem entity @s armor.head minecraft:player_head{"Unbreakable":true,HideFlags:63,Enchantments:[{id:"minecraft:binding_curse",lvl:1}],display:{Name:"{\"text\":\"Wizard\"}"},SkullOwner:{Id:"c8f05b3b-d055-49a3-bc12-194e0372add5",Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2YyODE5Mjk1YzAxZTEyYTI1YTRjYWJjNzYwYTY5MDBjODM0MDFhZWQxZTI0N2Q0NGI2YjkyOTJkYzZjMTBkYSJ9fX0="}]}}} 1
 
-    execute if score status mw matches 0 as @a[team=Blue] run replaceitem entity @s armor.chest minecraft:leather_chestplate{"Unbreakable":true,display:{color:8959},HideFlags:63,Enchantments:[{id:"minecraft:binding_curse",lvl:1}]} 1
-    execute if score status mw matches 0 as @a[team=Blue] run replaceitem entity @s armor.legs minecraft:leather_leggings{"Unbreakable":true,display:{color:8959},HideFlags:63,Enchantments:[{id:"minecraft:binding_curse",lvl:1}]} 1
-    execute if score status mw matches 0 as @a[team=Blue] run replaceitem entity @s armor.feet minecraft:leather_boots{"Unbreakable":true,display:{color:8959},HideFlags:63,Enchantments:[{id:"minecraft:binding_curse",lvl:1}]} 1
-
-    execute if score status mw matches 0 as @a[team=Red] run replaceitem entity @s armor.chest minecraft:leather_chestplate{"Unbreakable":true,display:{color:16711680},HideFlags:63,Enchantments:[{id:"minecraft:binding_curse",lvl:1}]} 1
-    execute if score status mw matches 0 as @a[team=Red] run replaceitem entity @s armor.legs minecraft:leather_leggings{"Unbreakable":true,display:{color:16711680},HideFlags:63,Enchantments:[{id:"minecraft:binding_curse",lvl:1}]} 1
-    execute if score status mw matches 0 as @a[team=Red] run replaceitem entity @s armor.feet minecraft:leather_boots{"Unbreakable":true,display:{color:16711680},HideFlags:63,Enchantments:[{id:"minecraft:binding_curse",lvl:1}]} 1
-
-    execute if score status mw matches 0 as @a[team=] run replaceitem entity @s armor.chest minecraft:air
-    execute if score status mw matches 0 as @a[team=] run replaceitem entity @s armor.legs minecraft:air
-    execute if score status mw matches 0 as @a[team=] run replaceitem entity @s armor.feet minecraft:air
-
-#InGame Events
-    execute as @a[x=-2007,y=67,z=-2007,dx=300,dy=300,dz=300,team=!] at @s positioned ~ ~ ~ if block ~ ~-3 ~ minecraft:diamond_block run experience add @s 7 levels
-    execute as @a[level=16..] run experience set @s 15 levels
-    execute as @a[x=-2007,y=67,z=-2007,dx=300,dy=300,dz=300,team=!] at @s positioned ~ ~ ~ if block ~ ~-3 ~ minecraft:diamond_block run function mw:flag
-
-    execute as @a[x=-2007,y=67,z=-2007,dx=300,dy=300,dz=300,team=!] at @s positioned ~ ~ ~ if block ~ ~-3 ~ minecraft:gold_block run function mw:powerup
-    execute as @a[x=-2007,y=67,z=-2007,dx=300,dy=300,dz=300,team=!] at @s positioned ~ ~ ~ if block ~ ~-3 ~ minecraft:gold_block run function mw:flag
-
-    execute as @a[x=-2007,y=67,z=-2007,dx=300,dy=300,dz=300,team=Red] at @s positioned ~ ~ ~ if block ~ ~-3 ~ minecraft:lapis_block run function mw:stop
-    execute as @a[x=-2007,y=67,z=-2007,dx=300,dy=300,dz=300,team=Blue] at @s positioned ~ ~ ~ if block ~ ~-3 ~ minecraft:redstone_block run function mw:stop
-
-    execute if score status mw matches 2 as @a[team=Red,scores={skin=1},sort=random] at @s positioned ~ 117 ~ rotated as @s as @e[limit=1,sort=nearest,type=armor_stand,tag=r1] align xz positioned ~.5 ~ ~.5 run tp @s ~ ~ ~ ~ ~
-    execute if score status mw matches 2 as @a[team=Red,scores={skin=2},sort=random] at @s positioned ~ 117 ~ rotated as @s as @e[limit=1,sort=nearest,type=armor_stand,tag=r2] align xz positioned ~.5 ~ ~.5 run tp @s ~ ~ ~ ~ ~
-    execute if score status mw matches 2 as @a[team=Red,scores={skin=3},sort=random] at @s positioned ~ 117 ~ rotated as @s as @e[limit=1,sort=nearest,type=armor_stand,tag=r3] align xz positioned ~.5 ~ ~.5 run tp @s ~ ~ ~ ~ ~
-    execute if score status mw matches 2 as @a[team=Red,scores={skin=4},sort=random] at @s positioned ~ 117 ~ rotated as @s as @e[limit=1,sort=nearest,type=armor_stand,tag=r4] align xz positioned ~.5 ~ ~.5 run tp @s ~ ~ ~ ~ ~
-    execute if score status mw matches 2 as @a[team=Red,scores={skin=5},sort=random] at @s positioned ~ 117 ~ rotated as @s as @e[limit=1,sort=nearest,type=armor_stand,tag=r5] align xz positioned ~.5 ~ ~.5 run tp @s ~ ~ ~ ~ ~
-    execute if score status mw matches 2 as @a[team=Red,scores={skin=6},sort=random] at @s positioned ~ 117 ~ rotated as @s as @e[limit=1,sort=nearest,type=armor_stand,tag=r6] align xz positioned ~.5 ~ ~.5 run tp @s ~ ~ ~ ~ ~
-
-    execute if score status mw matches 2 as @a[team=Blue,scores={skin=1},sort=random] at @s positioned ~ 70 ~ rotated as @s as @e[limit=1,sort=nearest,type=armor_stand,tag=b1] align xz positioned ~.5 ~ ~.5 run tp @s ~ ~ ~ ~ ~
-    execute if score status mw matches 2 as @a[team=Blue,scores={skin=2},sort=random] at @s positioned ~ 70 ~ rotated as @s as @e[limit=1,sort=nearest,type=armor_stand,tag=b2] align xz positioned ~.5 ~ ~.5 run tp @s ~ ~ ~ ~ ~
-    execute if score status mw matches 2 as @a[team=Blue,scores={skin=3},sort=random] at @s positioned ~ 70 ~ rotated as @s as @e[limit=1,sort=nearest,type=armor_stand,tag=b3] align xz positioned ~.5 ~ ~.5 run tp @s ~ ~ ~ ~ ~
-    execute if score status mw matches 2 as @a[team=Blue,scores={skin=4},sort=random] at @s positioned ~ 70 ~ rotated as @s as @e[limit=1,sort=nearest,type=armor_stand,tag=b4] align xz positioned ~.5 ~ ~.5 run tp @s ~ ~ ~ ~ ~
-    execute if score status mw matches 2 as @a[team=Blue,scores={skin=5},sort=random] at @s positioned ~ 70 ~ rotated as @s as @e[limit=1,sort=nearest,type=armor_stand,tag=b5] align xz positioned ~.5 ~ ~.5 run tp @s ~ ~ ~ ~ ~
-    execute if score status mw matches 2 as @a[team=Blue,scores={skin=6},sort=random] at @s positioned ~ 70 ~ rotated as @s as @e[limit=1,sort=nearest,type=armor_stand,tag=b6] align xz positioned ~.5 ~ ~.5 run tp @s ~ ~ ~ ~ ~
-
-    execute if score status mw matches 2 as @a[team=Red,scores={skin=1},sort=random] at @s positioned ~ 70 ~ rotated as @s as @e[limit=1,sort=nearest,type=armor_stand,tag=r1] align xz positioned ~.5 ~ ~.5 run tp @s ~ ~ ~ ~ ~
-    execute if score status mw matches 2 as @a[team=Red,scores={skin=2},sort=random] at @s positioned ~ 70 ~ rotated as @s as @e[limit=1,sort=nearest,type=armor_stand,tag=r2] align xz positioned ~.5 ~ ~.5 run tp @s ~ ~ ~ ~ ~
-    execute if score status mw matches 2 as @a[team=Red,scores={skin=3},sort=random] at @s positioned ~ 70 ~ rotated as @s as @e[limit=1,sort=nearest,type=armor_stand,tag=r3] align xz positioned ~.5 ~ ~.5 run tp @s ~ ~ ~ ~ ~
-    execute if score status mw matches 2 as @a[team=Red,scores={skin=4},sort=random] at @s positioned ~ 70 ~ rotated as @s as @e[limit=1,sort=nearest,type=armor_stand,tag=r4] align xz positioned ~.5 ~ ~.5 run tp @s ~ ~ ~ ~ ~
-    execute if score status mw matches 2 as @a[team=Red,scores={skin=5},sort=random] at @s positioned ~ 70 ~ rotated as @s as @e[limit=1,sort=nearest,type=armor_stand,tag=r5] align xz positioned ~.5 ~ ~.5 run tp @s ~ ~ ~ ~ ~
-    execute if score status mw matches 2 as @a[team=Red,scores={skin=6},sort=random] at @s positioned ~ 70 ~ rotated as @s as @e[limit=1,sort=nearest,type=armor_stand,tag=r6] align xz positioned ~.5 ~ ~.5 run tp @s ~ ~ ~ ~ ~
-
-    execute if score status mw matches 2 as @a[team=Blue,scores={skin=1},sort=random] at @s positioned ~ 117 ~ rotated as @s as @e[limit=1,sort=nearest,type=armor_stand,tag=b1] align xz positioned ~.5 ~ ~.5 run tp @s ~ ~ ~ ~ ~
-    execute if score status mw matches 2 as @a[team=Blue,scores={skin=2},sort=random] at @s positioned ~ 117 ~ rotated as @s as @e[limit=1,sort=nearest,type=armor_stand,tag=b2] align xz positioned ~.5 ~ ~.5 run tp @s ~ ~ ~ ~ ~
-    execute if score status mw matches 2 as @a[team=Blue,scores={skin=3},sort=random] at @s positioned ~ 117 ~ rotated as @s as @e[limit=1,sort=nearest,type=armor_stand,tag=b3] align xz positioned ~.5 ~ ~.5 run tp @s ~ ~ ~ ~ ~
-    execute if score status mw matches 2 as @a[team=Blue,scores={skin=4},sort=random] at @s positioned ~ 117 ~ rotated as @s as @e[limit=1,sort=nearest,type=armor_stand,tag=b4] align xz positioned ~.5 ~ ~.5 run tp @s ~ ~ ~ ~ ~
-    execute if score status mw matches 2 as @a[team=Blue,scores={skin=5},sort=random] at @s positioned ~ 117 ~ rotated as @s as @e[limit=1,sort=nearest,type=armor_stand,tag=b5] align xz positioned ~.5 ~ ~.5 run tp @s ~ ~ ~ ~ ~
-    execute if score status mw matches 2 as @a[team=Blue,scores={skin=6},sort=random] at @s positioned ~ 117 ~ rotated as @s as @e[limit=1,sort=nearest,type=armor_stand,tag=b6] align xz positioned ~.5 ~ ~.5 run tp @s ~ ~ ~ ~ ~
-
-    execute as @a[x=-2007,y=67,z=-2007,dx=300,dy=300,dz=300,team=Red] at @s positioned ~ ~ ~ if block ~ ~-3 ~ minecraft:emerald_block run scoreboard players add redFlag mw 1
-    execute as @a[x=-2007,y=67,z=-2007,dx=300,dy=300,dz=300,team=Blue] at @s positioned ~ ~ ~ if block ~ ~-3 ~ minecraft:emerald_block run scoreboard players add blueFlag mw 1
-    execute as @a[x=-2007,y=67,z=-2007,dx=300,dy=300,dz=300] at @s positioned ~ ~ ~ if block ~ ~-3 ~ minecraft:emerald_block run function mw:flag
 
 #timer
     scoreboard players add tickToSec var 1
@@ -271,70 +61,4 @@ setblock 114 37 1210 minecraft:redstone_block
     execute if score sec mw matches ..-1 run scoreboard players set sec mw 59
 
     execute if score status mw matches 2 if score min mw matches ..-1 run function mw:stop
-
-#slow walk
-    scoreboard players add tickTo2Sec var 1
-    execute if score tickTo2Sec var matches 1 run function mw:loopevery2seconds
-    execute if score restamina mw matches 1 if score tickTo2Sec var matches 40.. run scoreboard players set tickTo2Sec var 0
-    execute if score restamina mw matches 2 if score tickTo2Sec var matches 27.. run scoreboard players set tickTo2Sec var 0
-    execute if score restamina mw matches 3 if score tickTo2Sec var matches 20.. run scoreboard players set tickTo2Sec var 0
-    execute if score restamina mw matches 4 if score tickTo2Sec var matches 16.. run scoreboard players set tickTo2Sec var 0
-    execute if score restamina mw matches 5 if score tickTo2Sec var matches 13.. run scoreboard players set tickTo2Sec var 0
-    execute if score restamina mw matches 6 if score tickTo2Sec var matches 11.. run scoreboard players set tickTo2Sec var 0
-    execute if score restamina mw matches 7 if score tickTo2Sec var matches 10.. run scoreboard players set tickTo2Sec var 0
-
-    execute as @a[team=!] run scoreboard players operation @s walkOneCM += @s sprintOneCM
-    scoreboard players set @a sprintOneCM 0
-    execute as @a[team=!] run scoreboard players operation @s walkOneCM += @s shiftWalk
-    scoreboard players set @a shiftWalk 0
-    execute as @a[team=!] run scoreboard players operation @s walkOneM = @s walkOneCM
-    execute as @a[team=!] run scoreboard players operation @s walkOneM /= 100 var
-
-    execute if score status mw matches 2 as @a[team=!,level=1..15,scores={walkOneM=1..}] run experience add @s -1 levels
-    execute if score status mw matches 2 as @a[team=!,level=0..14,scores={walkOneM=1..}] run scoreboard players set @s walkOneCM 0
- 
-    #execute if score status mw matches 2 as @a[team=!,scores={fastwalkers=1..}] run scoreboard players remove @s 1
-    #.319        2.15
-    scoreboard players add 2tick var 1
-    execute as @a[scores={xp=1..},level=0] at @s run summon minecraft:armor_stand ~ ~ ~ {Invisible:1b,Marker:1b,NoGravity:1b,Tags:["slowmover"]}
-    execute as @a[scores={xp=1..},level=0] at @s run function mw:walk/summon
-
-    scoreboard players add @e[x=-150,dx=75,tag=Slow] slowLifeTime 1
-    kill @e[tag=Slow,scores={slowLifeTime=100..}]
-
-    execute if score 2tick var matches 3 as @a[level=..0] at @s at @e[type=minecraft:armor_stand,tag=slowmover] run tp @s ~ ~ ~
-    execute as @a[level=1..,scores={xp=0}] at @s run kill @e[type=minecraft:armor_stand,tag=slowmover,limit=1,sort=nearest]
-    execute as @a[level=1..,scores={xp=0}] at @s run function mw:walk/remove
-
-    execute if score 2tick var matches 3.. run scoreboard players set 2tick var 0
-    #function mw:walk/summon
-    execute as @a store result score @s xp run experience query @s levels
-
-#Bow Game
-
-    execute at @e[type=armor_stand,tag=bowGame] as @a[distance=..4,tag=!bowGamer] run title @s times 0 40 20
-    execute at @e[type=armor_stand,tag=bowGame] as @a[distance=..4,tag=!bowGamer] run title @s subtitle {"text":"(check your inventory!)","color":"gold"}
-    execute at @e[type=armor_stand,tag=bowGame] as @a[distance=..4,tag=!bowGamer] run title @s title {"text":"Shooting mini-game!","color":"dark_green"}
-    execute at @e[type=armor_stand,tag=bowGame] as @a[distance=..4,tag=!bowGamer] run scoreboard players set @s bowGame 0
-    execute at @e[type=armor_stand,tag=bowGame] as @a[distance=..4] run tag @s add bowGamer
-
-    execute as @a[tag=bowGamer,nbt=!{Inventory:[{Slot:4b,id:"minecraft:bow"}]}] run replaceitem entity @s hotbar.4 minecraft:bow{Unbreakable:true,HideFlags:63,Enchantments:[{id:"minecraft:power",lvl:255},{id:"minecraft:infinity",lvl:1}]} 1
-    execute as @a[tag=bowGamer,nbt=!{Inventory:[{Slot:27b,id:"minecraft:arrow"}]}] run replaceitem entity @s container.27 minecraft:arrow
-
-    kill @e[type=minecraft:arrow,nbt={inGround:1b}]
-
-    execute at @e[type=armor_stand,tag=bowGame] as @a[distance=4..,tag=bowGamer] run clear @s minecraft:bow
-    execute at @e[type=armor_stand,tag=bowGame] as @a[distance=4..,tag=bowGamer] run clear @s minecraft:arrow
-
-    execute at @e[type=armor_stand,tag=bowGame] as @a[distance=4..,tag=bowGamer,scores={bowGame=1..}] run title @s title ["",{"text":"Your score: ","color":"dark_green"},{"score":{"name":"@s","objective":"bowGame"},"color":"gold"}]
-    execute at @e[type=armor_stand,tag=bowGame] as @a[distance=4..,tag=bowGamer] run tag @s remove bowGamer
-
-    execute unless entity @e[x=162,y=40,z=1182,dx=1,dy=2,dz=40,type=sheep] if entity @a[tag=bowGamer] run summon minecraft:sheep 162.5 40.00 1214.5 {Rotation:[180F,0F],Tags:["left"],NoAI:1b}
-    execute unless entity @e[x=162,y=44,z=1182,dx=1,dy=2,dz=40,type=sheep] if entity @a[tag=bowGamer] run summon minecraft:sheep 162.5 44.00 1182.5 {Tags:["right"],NoAI:1b}
-    execute unless entity @e[x=162,y=48,z=1182,dx=1,dy=2,dz=40,type=sheep] if entity @a[tag=bowGamer] run summon minecraft:sheep 162.5 48.00 1214.5 {Rotation:[180F,0F],Tags:["left1"],NoAI:1b}
-
-    execute as @e[type=sheep] at @s if block ~ ~-1 ~ air run tp @s ~ ~-200 ~
-    execute as @e[type=sheep,tag=left] at @s run tp @s ~ ~ ~-0.3
-    execute as @e[type=sheep,tag=right] at @s run tp @s ~ ~ ~0.5
-    execute as @e[type=sheep,tag=left1] at @s run tp @s ~ ~ ~-0.7
 
