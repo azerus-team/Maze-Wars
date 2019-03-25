@@ -299,7 +299,7 @@ setblock 114 37 1210 minecraft:redstone_block
     execute as @a[scores={xp=1..},level=0] at @s run summon minecraft:armor_stand ~ ~ ~ {Invisible:1b,Marker:1b,NoGravity:1b,Tags:["slowmover"]}
     execute as @a[scores={xp=1..},level=0] at @s run function mw:walk/summon
 
-    scoreboard players add @e[x=-150,dx=75,type=minecraft:armor_stand,tag=Slow] slowLifeTime 1
+    scoreboard players add @e[x=-150,dx=75,tag=Slow] slowLifeTime 1
     kill @e[tag=Slow,scores={slowLifeTime=100..}]
 
     execute if score 2tick var matches 3 as @a[level=..0] at @s at @e[type=minecraft:armor_stand,tag=slowmover] run tp @s ~ ~ ~
