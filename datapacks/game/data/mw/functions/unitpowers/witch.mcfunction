@@ -5,7 +5,7 @@ execute if score @s delayPowers matches ..799 run tellraw @s ["",{"text":"["},{"
 execute if score @s delayPowers matches 800.. if entity @s[team=Red] run effect give @a[team=Blue] minecraft:nausea 12 0 true
 execute if score @s delayPowers matches 800.. if entity @s[team=Blue] run effect give @a[team=Red] minecraft:nausea 12 0 true
 
-
+scoreboard players set @a[scores={delayPowers=500..}] delayPowers 0
 
 
 
