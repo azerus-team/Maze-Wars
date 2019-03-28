@@ -1,21 +1,21 @@
-#####################################################################################################
-# 																									#
-#					    _                              _____ _____    _    __  __					#
-#					   / \    _______ _ __ _   _ ___  |_   _| ____|  / \  |  \/  |					#
-#					  / _ \  |_  / _ \ '__| | | / __|   | | |  _|   / _ \ | |\/| |					#
-#					 / ___ \  / /  __/ |  | |_| \__ \   | | | |___ / ___ \| |  | |					#
-#					/_/   \_\/___\___|_|   \__,_|___/   |_| |_____/_/   \_\_|  |_|					#
-#																									#
-#																									#
-#																									#
-#  Maze Wars created on Minecraft Funcions 															#
-#																									#
-# If you want edit our map we recommend fork our github repo and make pull request for us!			#
-# Please do not copy our map!																		#
-# Have fun! 																						#
-#																									#
-# Created by Azerus Team, Coded by Sirboys, Built by BrandShei;										#
-#####################################################################################################
+#################################################################################################################
+# 																												#
+#					    _                              _____ _____    _    __  __								#
+#					   / \    _______ _ __ _   _ ___  |_   _| ____|  / \  |  \/  |								#
+#					  / _ \  |_  / _ \ '__| | | / __|   | | |  _|   / _ \ | |\/| |								#
+#					 / ___ \  / /  __/ |  | |_| \__ \   | | | |___ / ___ \| |  | |								#
+#					/_/   \_\/___\___|_|   \__,_|___/   |_| |_____/_/   \_\_|  |_|								#
+#																												#
+#																												#
+#																												#
+#  Maze Wars created on Minecraft Funcions 																		#
+#																												#
+# If you want edit our map we recommend fork our github repo and make pull request for us!						#
+# Please do not copy our map!																					#
+# Have fun! 																									#
+#																												#
+# Created by Azerus Team, Coded by Sirboys, Built by BrandShei, Pictrues by ITZJustKirill, Trailler by Just_Vlad#
+#################################################################################################################
 
 
 say Maze Wars v0.5 installed!
@@ -33,11 +33,16 @@ scoreboard objectives setdisplay sidebar
 		scoreboard players set sec mw 0
 	scoreboard objectives add var dummy
 		scoreboard players set 100 var 100
+		scoreboard players set 500 var 500
+		scoreboard players set 20 var 20
 	scoreboard objectives add joinRed minecraft.dropped:minecraft.red_concrete
 	scoreboard objectives add joinBlue minecraft.dropped:minecraft.blue_concrete
 	scoreboard objectives add leaveTeam minecraft.dropped:minecraft.barrier
 	scoreboard objectives add reJoin minecraft.custom:minecraft.leave_game
+	scoreboard objectives add shiftClick minecraft.custom:minecraft.sneak_time
 	scoreboard objectives add slowLifeTime dummy
+	scoreboard objectives add delayPowers dummy
+	scoreboard objectives add delayPowersInSec dummy
 	scoreboard objectives add bowGame totalKillCount
 	scoreboard objectives add tntDrop minecraft.dropped:minecraft.tnt
 	scoreboard objectives add inc_sacDrop minecraft.dropped:minecraft.ink_sac

@@ -1,14 +1,13 @@
-
-
-#effects
-function mw:loop/effects
-function mw:loop/mapselector
-function mw:loop/settings
-function mw:loop/teamselector
-function mw:loop/goldblock_effects
-function mw:loop/bowgame
-function mw:loop/game_handlers
-function mw:loop/lobby
+#functions
+    function mw:loop/effects
+    function mw:loop/mapselector
+    function mw:loop/unitpowers
+    function mw:loop/settings
+    function mw:loop/teamselector
+    function mw:loop/goldblock_effects
+    function mw:loop/bowgame
+    function mw:loop/game_handlers
+    function mw:loop/lobby
 
 
 gamemode adventure @a
