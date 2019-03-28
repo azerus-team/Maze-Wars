@@ -30,6 +30,7 @@ execute as @a[scores={tntDrop=1..},x=-1997,y=-1,z=-1996,dx=56,dz=56,dy=200] at @
 execute as @a[scores={tntDrop=1..},x=-1997,y=-1,z=-1996,dx=56,dz=56,dy=200] at @s run fill ~1 119 ~1 ~-1 119 ~-1 minecraft:air
 scoreboard players set @a tntDrop 0
 
+
 execute as @a[scores={inc_sacDrop=1..},team=Red] at @r[team=Blue] run function mw:blind
 execute as @a[scores={inc_sacDrop=1..},team=Blue] at @r[team=Red] run function mw:blind
 scoreboard players set @a inc_sacDrop 0

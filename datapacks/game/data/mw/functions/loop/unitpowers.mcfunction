@@ -34,7 +34,7 @@ execute if score status mw matches 2 as @a[scores={skin=1..6},team=!] run scoreb
 
 #done
     execute as @a[scores={shiftClick=1,skin=1}] run function mw:unitpowers/vampire
-execute as @a[scores={shiftClick=1,skin=2}] run function mw:unitpowers/witch
+    execute as @a[scores={shiftClick=1,skin=2}] run function mw:unitpowers/witch
 execute as @a[scores={shiftClick=1,skin=3}] run function mw:unitpowers/creeper
 execute as @a[scores={shiftClick=1,skin=4}] run function mw:unitpowers/elder_guardian
 execute as @a[scores={shiftClick=1,skin=5}] run function mw:unitpowers/wolf
