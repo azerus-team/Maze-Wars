@@ -18,10 +18,19 @@
 
 #execute as @a[nbt={}]
 execute if score status mw matches 2 as @a[scores={skin=1..6},team=!] run scoreboard players add @s delayPowers 1
+#Vampire
+    execute as @a[scores={skin=1}] run scoreboard players operation @s delayPowersInSec = 500 var
+    execute as @a[scores={skin=1}] run scoreboard players operation @s delayPowersInSec -= @s delayPowers
+    execute as @a[scores={skin=1}] run scoreboard players operation @s delayPowersInSec /= 20 var
+#Witch
+    execute as @a[scores={skin=1}] run scoreboard players operation @s delayPowersInSec = 800 var
+    execute as @a[scores={skin=1}] run scoreboard players operation @s delayPowersInSec -= @s delayPowers
+    execute as @a[scores={skin=1}] run scoreboard players operation @s delayPowersInSec /= 20 var
 
-execute as @a[scores={skin=1}] run scoreboard players operation @s delayPowersInSec = 500 var
-execute as @a[scores={skin=1}] run scoreboard players operation @s delayPowersInSec -= @s delayPowers
-execute as @a[scores={skin=1}] run scoreboard players operation @s delayPowersInSec /= 20 var
+
+
+
+
 
 #done
     execute as @a[scores={shiftClick=1,skin=1}] run function mw:unitpowers/vampire
