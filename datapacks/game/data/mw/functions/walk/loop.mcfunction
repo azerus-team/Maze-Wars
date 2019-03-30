@@ -8,6 +8,7 @@ execute if score restamina mw matches 5 if score tickTo2Sec var matches 13.. run
 execute if score restamina mw matches 6 if score tickTo2Sec var matches 11.. run scoreboard players set tickTo2Sec var 0
 execute if score restamina mw matches 7 if score tickTo2Sec var matches 10.. run scoreboard players set tickTo2Sec var 0
 
+
 execute as @a[team=!] run scoreboard players operation @s walkOneCM += @s sprintOneCM
 scoreboard players set @a sprintOneCM 0
 execute as @a[team=!] run scoreboard players operation @s walkOneCM += @s shiftWalk
@@ -32,6 +33,6 @@ execute as @a[level=1..,scores={xp=0}] at @s run kill @e[type=minecraft:armor_st
 execute as @a[level=1..,scores={xp=0}] at @s run function mw:walk/remove
 
 execute if score 2tick var matches 3.. run scoreboard players set 2tick var 0
-#function mw:walk/summon
+
 execute as @a store result score @s xp run experience query @s levels
 
