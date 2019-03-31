@@ -8,7 +8,7 @@
     function mw:loop/bowgame
     function mw:loop/game_handlers
     function mw:loop/lobby
-
+    function mw:walk/loop
 
 gamemode adventure @a
 
