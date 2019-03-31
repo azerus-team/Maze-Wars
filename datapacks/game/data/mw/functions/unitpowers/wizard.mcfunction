@@ -9,13 +9,3 @@ execute as @s if score @s delayPowers matches 700.. if entity @s[team=Blue] at @
 
 scoreboard players remove @a[scores={stopPlayer=1..}] stopPlayer 1
 
-
-
-
-
-
-
-
-
-
-
