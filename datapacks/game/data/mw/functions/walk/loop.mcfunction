@@ -1,3 +1,5 @@
+execute as @a[scores={stopPlayer=1..}] run experience set @s 0 levels
+
 scoreboard players add tickTo2Sec var 1
 execute if score tickTo2Sec var matches 1 run function mw:loopevery2seconds
 execute if score restamina mw matches 1 if score tickTo2Sec var matches 40.. run scoreboard players set tickTo2Sec var 0
@@ -35,4 +37,9 @@ execute as @a[level=1..,scores={xp=0}] at @s run function mw:walk/remove
 execute if score 2tick var matches 3.. run scoreboard players set 2tick var 0
 
 execute as @a store result score @s xp run experience query @s levels
+
+
+
+
+
 

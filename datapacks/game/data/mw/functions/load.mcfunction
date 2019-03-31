@@ -35,6 +35,10 @@ scoreboard objectives setdisplay sidebar
 		scoreboard players set 100 var 100
 		scoreboard players set 500 var 500
 		scoreboard players set 20 var 20
+		scoreboard players set 800 var 800
+		scoreboard players set 900 var 900
+		scoreboard players set 700 var 700
+		scoreboard players set 700 var 700
 	scoreboard objectives add joinRed minecraft.dropped:minecraft.red_concrete
 	scoreboard objectives add joinBlue minecraft.dropped:minecraft.blue_concrete
 	scoreboard objectives add leaveTeam minecraft.dropped:minecraft.barrier
@@ -49,7 +53,7 @@ scoreboard objectives setdisplay sidebar
 	scoreboard objectives add dropMedKit minecraft.dropped:minecraft.red_shulker_box
 	scoreboard objectives add dropWolfEgg minecraft.dropped:minecraft.wolf_spawn_egg
 	scoreboard objectives add fastwalkers dummy
-	scoreboard objectives add dogBite dummy
+	scoreboard objectives add stopPlayer dummy
 	scoreboard objectives add join minecraft.custom:minecraft.leave_game
 	scoreboard objectives add skin dummy
 	scoreboard objectives add walkOneCM minecraft.custom:minecraft.walk_one_cm

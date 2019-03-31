@@ -34,15 +34,23 @@ execute if score status mw matches 2 as @a[scores={skin=1..6},team=!] run scoreb
     execute as @a[scores={skin=4}] run scoreboard players operation @s delayPowersInSec = 700 var
     execute as @a[scores={skin=4}] run scoreboard players operation @s delayPowersInSec -= @s delayPowers
     execute as @a[scores={skin=4}] run scoreboard players operation @s delayPowersInSec /= 20 var
+#Wolf
+    execute as @a[scores={skin=5}] run scoreboard players operation @s delayPowersInSec = 600 var
+    execute as @a[scores={skin=5}] run scoreboard players operation @s delayPowersInSec -= @s delayPowers
+    execute as @a[scores={skin=5}] run scoreboard players operation @s delayPowersInSec /= 20 var
+#Wizard
+    execute as @a[scores={skin=6}] run scoreboard players operation @s delayPowersInSec = 700 var
+    execute as @a[scores={skin=6}] run scoreboard players operation @s delayPowersInSec -= @s delayPowers
+    execute as @a[scores={skin=6}] run scoreboard players operation @s delayPowersInSec /= 20 var
 
 
 
 #done
     execute as @a[scores={shiftClick=1,skin=1}] run function mw:unitpowers/vampire
     execute as @a[scores={shiftClick=1,skin=2}] run function mw:unitpowers/witch
-execute as @a[scores={shiftClick=1,skin=3}] run function mw:unitpowers/creeper
-execute as @a[scores={shiftClick=1,skin=4}] run function mw:unitpowers/elder_guardian
-execute as @a[scores={shiftClick=1,skin=5}] run function mw:unitpowers/wolf
+    execute as @a[scores={shiftClick=1,skin=3}] run function mw:unitpowers/creeper
+    execute as @a[scores={shiftClick=1,skin=4}] run function mw:unitpowers/elder_guardian
+    execute as @a[scores={shiftClick=1,skin=5}] run function mw:unitpowers/wolf
 execute as @a[scores={shiftClick=1,skin=6}] run function mw:unitpowers/wizard
 
 
