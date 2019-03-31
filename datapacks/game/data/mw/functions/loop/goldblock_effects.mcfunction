@@ -45,19 +45,19 @@ scoreboard players set @a dropWolfEgg 0
 execute as @a[team=Red] at @s positioned ~ ~-2 ~ if entity @e[type=minecraft:wolf,tag=Blue,distance=..0.5] run tellraw @a ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"] "},{"selector":"@s"},{"text":" was bitten! And can't move ","color":"gold"},{"text":"30","color":"dark_green"},{"text":" seconds!","color":"gold"}]
 execute as @a[team=Blue] at @s positioned ~ ~-2 ~ if entity @e[type=minecraft:wolf,tag=Red,distance=..0.5] run tellraw @a ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"] "},{"selector":"@s"},{"text":" was bitten! And can't move ","color":"gold"},{"text":"30","color":"dark_green"},{"text":" seconds!","color":"gold"}]
 
-execute as @a[team=Red] at @s positioned ~ ~-2 ~ if entity @e[type=minecraft:wolf,tag=Blue,distance=..0.5] run scoreboard players set @s dogBite 600
-execute as @a[team=Blue] at @s positioned ~ ~-2 ~ if entity @e[type=minecraft:wolf,tag=Red,distance=..0.5] run scoreboard players set @s dogBite 600
+execute as @a[team=Red] at @s positioned ~ ~-2 ~ if entity @e[type=minecraft:wolf,tag=Blue,distance=..0.5] run scoreboard players set @s stopPlayer 600
+execute as @a[team=Blue] at @s positioned ~ ~-2 ~ if entity @e[type=minecraft:wolf,tag=Red,distance=..0.5] run scoreboard players set @s stopPlayer 600
 
 execute as @a[team=Red] at @s positioned ~ ~-2 ~ if entity @e[type=minecraft:wolf,tag=Blue,distance=..0.5] run kill @e[type=minecraft:wolf,distance=..0.5,sort=nearest,limit=1,tag=Blue]
 execute as @a[team=Blue] at @s positioned ~ ~-2 ~ if entity @e[type=minecraft:wolf,tag=Red,distance=..0.5] run kill @e[type=minecraft:wolf,distance=..0.5,sort=nearest,limit=1,tag=Red]
-execute as @a[scores={dogBite=1..}] run experience set @s 0 levels
-execute as @a[scores={dogBite=1..}] run scoreboard players remove @s dogBite 1
+execute as @a[scores={stopPlayer=1..}] run experience set @s 0 levels
+execute as @a[scores={stopPlayer=1..}] run scoreboard players remove @s stopPlayer 1
 #first aid kit
-execute as @a[scores={dropMedKit=1..},team=Red] if entity @a[team=Red,scores={dogBite=1..}] at @a[team=Red,scores={dogBite=1..}] run tellraw @a[team=Red] ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"] "},{"selector":"@s"},{"text":" used ","color":"gold"},{"text":"First aid kit","color":"dark_green"},{"text":". And helped","color":"gold"},{"text":" ","color":"white"},{"selector":"@p","color":"white"}]
-execute as @a[scores={dropMedKit=1..},team=Blue] if entity @a[team=Blue,scores={dogBite=1..}] at @a[team=Blue,scores={dogBite=1..}] run tellraw @a[team=Blue] ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"] "},{"selector":"@s"},{"text":" used ","color":"gold"},{"text":"First aid kit","color":"dark_green"},{"text":". And helped","color":"gold"},{"text":" ","color":"white"},{"selector":"@p","color":"white"}]
+execute as @a[scores={dropMedKit=1..},team=Red] if entity @a[team=Red,scores={stopPlayer=1..}] at @a[team=Red,scores={stopPlayer=1..}] run tellraw @a[team=Red] ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"] "},{"selector":"@s"},{"text":" used ","color":"gold"},{"text":"First aid kit","color":"dark_green"},{"text":". And helped","color":"gold"},{"text":" ","color":"white"},{"selector":"@p","color":"white"}]
+execute as @a[scores={dropMedKit=1..},team=Blue] if entity @a[team=Blue,scores={stopPlayer=1..}] at @a[team=Blue,scores={stopPlayer=1..}] run tellraw @a[team=Blue] ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"] "},{"selector":"@s"},{"text":" used ","color":"gold"},{"text":"First aid kit","color":"dark_green"},{"text":". And helped","color":"gold"},{"text":" ","color":"white"},{"selector":"@p","color":"white"}]
 
-execute as @a[scores={dropMedKit=1..},team=Red] unless entity @a[team=Red,scores={dogBite=1..}] run give @s minecraft:red_shulker_box{display:{Name:"[{\"text\":\"First aid kit\",\"color\":\"red\",\"italic\":\"false\"},{\"text\":\" [Press \",\"color\":\"white\",\"italic\":\"false\"},{\"keybind\":\"key.drop\",\"color\":\"white\",\"italic\":\"false\"},{\"text\":\" to use]\",\"color\":\"white\",\"italic\":\"false\"}]"}} 1
-execute as @a[scores={dropMedKit=1..},team=Blue] unless entity @a[team=Blue,scores={dogBite=1..}] run give @s minecraft:red_shulker_box{display:{Name:"[{\"text\":\"First aid kit\",\"color\":\"red\",\"italic\":\"false\"},{\"text\":\" [Press \",\"color\":\"white\",\"italic\":\"false\"},{\"keybind\":\"key.drop\",\"color\":\"white\",\"italic\":\"false\"},{\"text\":\" to use]\",\"color\":\"white\",\"italic\":\"false\"}]"}} 1
+execute as @a[scores={dropMedKit=1..},team=Red] unless entity @a[team=Red,scores={stopPlayer=1..}] run give @s minecraft:red_shulker_box{display:{Name:"[{\"text\":\"First aid kit\",\"color\":\"red\",\"italic\":\"false\"},{\"text\":\" [Press \",\"color\":\"white\",\"italic\":\"false\"},{\"keybind\":\"key.drop\",\"color\":\"white\",\"italic\":\"false\"},{\"text\":\" to use]\",\"color\":\"white\",\"italic\":\"false\"}]"}} 1
+execute as @a[scores={dropMedKit=1..},team=Blue] unless entity @a[team=Blue,scores={stopPlayer=1..}] run give @s minecraft:red_shulker_box{display:{Name:"[{\"text\":\"First aid kit\",\"color\":\"red\",\"italic\":\"false\"},{\"text\":\" [Press \",\"color\":\"white\",\"italic\":\"false\"},{\"keybind\":\"key.drop\",\"color\":\"white\",\"italic\":\"false\"},{\"text\":\" to use]\",\"color\":\"white\",\"italic\":\"false\"}]"}} 1
 
 scoreboard players set @a dropMedKit 0
 
