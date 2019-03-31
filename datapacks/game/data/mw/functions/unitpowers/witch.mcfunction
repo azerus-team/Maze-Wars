@@ -5,6 +5,10 @@ execute if score @s delayPowers matches ..799 run tellraw @s ["",{"text":"["},{"
 execute if score @s delayPowers matches 800.. if entity @s[team=Red] run effect give @a[team=Blue] minecraft:nausea 12 0 true
 execute if score @s delayPowers matches 800.. if entity @s[team=Blue] run effect give @a[team=Red] minecraft:nausea 12 0 true
 
+execute if score @s delayPowers matches 800.. if entity @s[team=Blue] run tellraw @s ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"]"},{"text":" ","color":"gold"},{"selector":"@s"},{"text":" imposed nausea","color":"gold"},{"text":" for ","color":"gold"},{"text":"Red","color":"red"},{"text":" team!","color":"gold"}]
+execute if score @s delayPowers matches 800.. if entity @s[team=Red] run tellraw @s ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"]"},{"text":" ","color":"gold"},{"selector":"@s"},{"text":" imposed nausea","color":"gold"},{"text":" for ","color":"gold"},{"text":"Blue","color":"blue"},{"text":" team!","color":"gold"}]
+
+
 scoreboard players set @a[scores={delayPowers=500..}] delayPowers 0
 
 
