@@ -18,8 +18,8 @@ scoreboard players set @a shiftWalk 0
 execute as @a[team=!] run scoreboard players operation @s walkOneM = @s walkOneCM
 execute as @a[team=!] run scoreboard players operation @s walkOneM /= 100 var
 
-execute if score status mw matches 2 as @a[team=!,level=1..15,scores={walkOneM=1..}] run experience add @s -1 levels
-execute if score status mw matches 2 as @a[team=!,level=0..14,scores={walkOneM=1..}] run scoreboard players set @s walkOneCM 0
+execute if score status mw matches 2 as @a[team=!,level=1..,scores={walkOneM=1..}] run experience add @s -1 levels
+execute if score status mw matches 2 as @a[team=!,level=0..19,scores={walkOneM=1..}] run scoreboard players set @s walkOneCM 0
 
 #execute if score status mw matches 2 as @a[team=!,scores={fastwalkers=1..}] run scoreboard players remove @s 1
 #.319        2.15

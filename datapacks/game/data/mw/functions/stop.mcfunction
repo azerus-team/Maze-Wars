@@ -19,7 +19,7 @@ scoreboard objectives setdisplay sidebar
 
 kill @e[name=unit,type=armor_stand]
 
-clone 117 40 1221 119 41 1222 117 40 1219
+#clone 117 40 1221 119 41 1222 117 40 1219
 
 tp @a 118.5 42 1197.5
 scoreboard players set status mw 0
