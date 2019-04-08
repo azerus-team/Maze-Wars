@@ -9,6 +9,10 @@
     function mw:loop/game_handlers
     function mw:loop/lobby
     function mw:walk/loop
+    
+    function mw:scoreboardplayers
+    function mw:scoreboardplayersflags
+
 
 gamemode adventure @a
 
@@ -18,8 +22,6 @@ execute as @e[type=minecraft:item_frame,x=109,y=43,z=1210,dx=1,dz=5,dy=2] run da
 scoreboard players set players mw 0
 execute as @a run scoreboard players add players mw 1
 
-function mw:scoreboardplayers
-function mw:scoreboardplayersflags
 
 bossbar set timer players @a
 

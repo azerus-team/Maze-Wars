@@ -9,7 +9,7 @@ execute if score @s delayPowers matches 800.. if entity @s[team=Blue] run tellra
 execute if score @s delayPowers matches 800.. if entity @s[team=Red] run tellraw @s ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"]"},{"text":" ","color":"gold"},{"selector":"@s"},{"text":" imposed nausea","color":"gold"},{"text":" for ","color":"gold"},{"text":"Blue","color":"blue"},{"text":" team!","color":"gold"}]
 
 
-scoreboard players set @a[scores={delayPowers=500..}] delayPowers 0
+scoreboard players set @s[scores={delayPowers=500..}] delayPowers 0
 
 
 

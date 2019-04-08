@@ -7,5 +7,8 @@ execute as @s if score @s delayPowers matches 700.. if entity @s[team=Red] at @r
 execute as @s if score @s delayPowers matches 700.. if entity @s[team=Blue] at @r[team=Red] run function mw:unitpowers/wizard/blue
 
 
-scoreboard players remove @a[scores={stopPlayer=1..}] stopPlayer 1
+scoreboard players remove @s[scores={stopPlayer=1..}] stopPlayer 1
+
+scoreboard players set @s[scores={delayPowers=700..}] delayPowers 0
+
 

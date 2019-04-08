@@ -10,4 +10,4 @@ execute if score @s delayPowers matches 900.. if entity @s[x=-1996,y=-1,z=-1995,
 execute if score @s delayPowers matches 900.. if entity @s[x=-1996,y=-1,z=-1995,dx=54,dz=54,dy=200] run tellraw @s ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"]"},{"text":" You have successfully blown up the walls of the maze!","color":"gold"}]
 
 
-scoreboard players set @a[scores={delayPowers=900..}] delayPowers 0
+scoreboard players set @s[scores={delayPowers=900..}] delayPowers 0

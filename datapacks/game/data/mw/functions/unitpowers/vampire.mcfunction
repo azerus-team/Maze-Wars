@@ -4,3 +4,4 @@ execute as @s if score @s delayPowers matches ..499 run tellraw @s ["",{"text":"
 
 execute at @s if score @s delayPowers matches 500.. if entity @s[team=Red] at @r[team=Blue,level=5..] run function mw:unitpowers/vampire/red
 execute at @s if score @s delayPowers matches 500.. if entity @s[team=Blue] at @r[team=Red,level=5..] run function mw:unitpowers/vampire/blue
+
