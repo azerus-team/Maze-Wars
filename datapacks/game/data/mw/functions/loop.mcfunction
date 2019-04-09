@@ -14,10 +14,9 @@
     function mw:scoreboardplayersflags
 
 
-gamemode adventure @a
-
-execute as @e[type=minecraft:item_frame,x=127,y=43,z=1210,dx=1,dz=5,dy=2] run data merge entity @s {ItemRotation:0b}
-execute as @e[type=minecraft:item_frame,x=109,y=43,z=1210,dx=1,dz=5,dy=2] run data merge entity @s {ItemRotation:0b}
+gamemode adventure @a[tag=!gamemode]
+execute as @e[type=minecraft:item_frame,nbt=!{ItemRotation:0b}] run data merge entity @s {ItemRotation:0b}
+execute as @e[type=minecraft:item_frame,nbt=!{Invulnerable:1b}] run data merge entity @s {Invulnerable:1b}
 
 scoreboard players set players mw 0
 execute as @a run scoreboard players add players mw 1
