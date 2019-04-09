@@ -1,4 +1,4 @@
-scoreboard players set maxRandom var 11
+scoreboard players set maxRandom var 12
 function mw:random
     execute if score random var matches 0 if entity @s[team=Red] run tellraw @a[team=Red] ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"] "},{"selector":"@s"},{"text":" "},{"text":"has found a ","color":"gold"},{"text":"Torch","color":"green"},{"text":".","color":"gold"}]
     execute if score random var matches 0 if entity @s[team=Red] run scoreboard players set rTorch mw 1800
@@ -47,6 +47,9 @@ function mw:random
     execute if score random var matches 10 if entity @s[team=Red] run function mw:powerup/robingoodr
     execute if score random var matches 10 if entity @s[team=Blue] run function mw:powerup/robingoodb
     
+    execute if score random var matches 11 run tp @a[team=Blue] -1997.5 72 -1938.5 -135 80
+    execute if score random var matches 11 run tp @a[team=Red] -1939.5 119 -1996.5 45 80
+    execute if score random var matches 11 run tellraw @a ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"] "},{"selector":"@s"},{"text":" "},{"text":"has found ","color":"gold"},{"text":"Time machine","color":"green"},{"text":" and all player to base.","color":"gold"}]
 
     
 
