@@ -9,10 +9,9 @@
     function mw:loop/game_handlers
     function mw:loop/lobby
     function mw:walk/loop
-    
+
     function mw:scoreboardplayers
     function mw:scoreboardplayersflags
-
 
 gamemode adventure @a[tag=!gamemode]
 execute as @e[type=minecraft:item_frame,nbt=!{ItemRotation:0b}] run data merge entity @s {ItemRotation:0b}
@@ -21,19 +20,14 @@ execute as @e[type=minecraft:item_frame,nbt=!{Invulnerable:1b}] run data merge e
 scoreboard players set players mw 0
 execute as @a run scoreboard players add players mw 1
 
-
 bossbar set timer players @a
 
 execute as @a unless score @s skin matches 1..6 run scoreboard players set @s skin 1
-
 
 kill @e[type=item]
 
 setblock 114 37 1210 minecraft:air
 setblock 114 37 1210 minecraft:redstone_block
-
-
-
 
 #view distance
     execute if score status mw matches 2 if score distance mw matches 2 as @a at @s run fill ~-2 ~-2 ~-2 ~2 ~2 ~2 minecraft:barrier replace minecraft:black_concrete
