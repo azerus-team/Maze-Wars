@@ -8,6 +8,6 @@ scoreboard players set temp var 1
     execute if score redFlag mw < blueFlag mw run scoreboard players remove blueFlag mw 5
     execute if score blueFlag mw matches ..0 run scoreboard players set blueFlag mw 0
 
-    execute if score redFlag mw >= blueFlag mw run tellraw @a ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"] "},{"text":"Cause the ","color":"gold"},{"text":"Red ","color":"red"},{"text":"team has more flags than the ","color":"gold"},{"text":"Blue ","color":"blue"},{"text":"team, ","color":"gold"},{"text":"Robin Hood","color":"dark_green"},{"text":" did not take the flags.","color":"gold"}]
+    execute if score temp var matches 1 if score redFlag mw >= blueFlag mw run tellraw @a ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"] "},{"text":"Cause the ","color":"gold"},{"text":"Red ","color":"red"},{"text":"team has more flags than the ","color":"gold"},{"text":"Blue ","color":"blue"},{"text":"team, ","color":"gold"},{"text":"Robin Hood","color":"dark_green"},{"text":" did not take the flags.","color":"gold"}]
  
 scoreboard players set temp var 0

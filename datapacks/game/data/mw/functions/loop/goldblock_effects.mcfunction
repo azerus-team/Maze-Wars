@@ -31,8 +31,8 @@ execute as @a[scores={tntDrop=1..},x=-1997,y=-1,z=-1996,dx=56,dz=56,dy=200] at @
 scoreboard players set @a tntDrop 0
 
 
-execute as @a[scores={inc_sacDrop=1..},team=Red] at @r[team=Blue] run function mw:blind
-execute as @a[scores={inc_sacDrop=1..},team=Blue] at @r[team=Red] run function mw:blind
+execute as @a[scores={inc_sacDrop=1..},team=Red] at @r[team=Blue] run function mw:powerup/blind
+execute as @a[scores={inc_sacDrop=1..},team=Blue] at @r[team=Red] run function mw:powerup/blind
 scoreboard players set @a inc_sacDrop 0
 #dog
 execute as @a[scores={dropWolfEgg=1..},team=Red] at @s run summon minecraft:wolf ~ 70 ~ {NoAI:1b,NoGravity:1b,Tags:["Red"],Silent:1b}
