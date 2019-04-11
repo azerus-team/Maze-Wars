@@ -16,6 +16,7 @@
 gamemode adventure @a[tag=!gamemode]
 execute as @e[type=minecraft:item_frame,nbt=!{ItemRotation:0b}] run data merge entity @s {ItemRotation:0b}
 execute as @e[type=minecraft:item_frame,nbt=!{Invulnerable:1b}] run data merge entity @s {Invulnerable:1b}
+stopsound @a master minecraft:entity.experience_orb.pickup
 
 scoreboard players set players mw 0
 execute as @a run scoreboard players add players mw 1
