@@ -68,3 +68,10 @@ execute if score status mw matches 2 as @e[x=-2025,dx=100,z=-2016,dz=100,tag=b6,
 execute as @a[x=-2007,y=67,z=-2007,dx=300,dy=300,dz=300,team=Red] at @s positioned ~ ~ ~ if block ~ ~-3 ~ minecraft:emerald_block run scoreboard players add redFlag mw 1
 execute as @a[x=-2007,y=67,z=-2007,dx=300,dy=300,dz=300,team=Blue] at @s positioned ~ ~ ~ if block ~ ~-3 ~ minecraft:emerald_block run scoreboard players add blueFlag mw 1
 execute as @a[x=-2007,y=67,z=-2007,dx=300,dy=300,dz=300] at @s positioned ~ ~ ~ if block ~ ~-3 ~ minecraft:emerald_block run function mw:flag
+
+
+execute if score status mw matches 2 unless entity @a[team=Red] run scoreboard players set redFlag mw 0
+execute if score status mw matches 2 unless entity @a[team=Red] run function mw:stop
+
+execute if score status mw matches 2 unless entity @a[team=Blue] run scoreboard players set blueFlag mw 0
+execute if score status mw matches 2 unless entity @a[team=Blue] run function mw:stop

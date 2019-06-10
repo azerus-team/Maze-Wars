@@ -56,4 +56,3 @@ setblock 114 37 1210 minecraft:redstone_block
     execute if score sec mw matches ..-1 run scoreboard players set sec mw 59
 
     execute if score status mw matches 2 if score min mw matches ..-1 run function mw:stop
-

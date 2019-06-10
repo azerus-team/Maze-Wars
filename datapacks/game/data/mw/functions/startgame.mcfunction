@@ -5,6 +5,8 @@ function mw:prearea
 tp @a[team=Blue] -1997.5 72 -1938.5 -135 80
 tp @a[team=Red] -1939.5 119 -1996.5 45 80
 
+kill @e[type=minecraft:armor_stand,scores={skin=1..6}]
+
 function mw:setunit
 
 scoreboard objectives setdisplay sidebar MazeWars
