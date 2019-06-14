@@ -6,6 +6,4 @@ execute at @s if score @s delayPowers matches 700.. if entity @s[team=Red] run t
 execute at @s if score @s delayPowers matches 700.. if entity @s[team=Blue] run effect give @a[team=Red] minecraft:slowness 15 4 true
 execute at @s if score @s delayPowers matches 700.. if entity @s[team=Blue] run tellraw @a[team=Red] ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"] "},{"text":"You got slowness, by ","color":"gold"},{"selector":"@s","color":"white"},{"text":"!","color":"gold"}]
 execute at @s if score @s delayPowers matches 700.. if entity @s[team=Blue] run tellraw @s ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"]"},{"text":" You have successfully slowed down the","color":"gold"},{"text":" Red","color":"red"},{"text":" team!","color":"gold"}]
-
-
-scoreboard players set @s[scores={dalayPowers=700..}] dalayPowers 0
+scoreboard players set @s[scores={delayPowers=700..}] delayPowers 0
