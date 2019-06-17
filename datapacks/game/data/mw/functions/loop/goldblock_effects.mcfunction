@@ -28,6 +28,7 @@ execute as @a[scores={tntDrop=1..},x=-1995,y=-1,z=-1994,dx=52,dz=52,dy=200] at @
 execute as @a[scores={tntDrop=1..},x=-1995,y=-1,z=-1994,dx=52,dz=52,dy=200] at @s run fill ~1 70 ~1 ~-1 70 ~-1 minecraft:air
 execute as @a[scores={tntDrop=1..},x=-1995,y=-1,z=-1994,dx=52,dz=52,dy=200] at @s run fill ~1 117 ~1 ~-1 117 ~-1 minecraft:air
 execute as @a[scores={tntDrop=1..},x=-1995,y=-1,z=-1994,dx=52,dz=52,dy=200] at @s run fill ~1 119 ~1 ~-1 119 ~-1 minecraft:air
+execute as @a[scores={tntDrop=1..},x=-1995,y=-1,z=-1994,dx=52,dz=52,dy=200] at @s run playsound minecraft:entity.lightning_bolt.impact master @s ~ ~ ~ 0.25 0.6
 scoreboard players set @a tntDrop 0
 
 
@@ -37,13 +38,16 @@ scoreboard players set @a inc_sacDrop 0
 #dog
 execute as @a[scores={dropWolfEgg=1..},team=Red] at @s run summon minecraft:wolf ~ 70 ~ {NoAI:1b,NoGravity:1b,Tags:["Red"],Silent:1b}
 execute as @a[scores={dropWolfEgg=1..},team=Blue] at @s run summon minecraft:wolf ~ 117 ~ {NoAI:1b,NoGravity:1b,Tags:["Blue"],Silent:1b}
-
+execute as @a[scores={dropWolfEgg=1..}] at @s run playsound minecraft:entity.wolf.whine master @s ~ ~ ~ 0.5 1
 execute as @a[scores={dropWolfEgg=1..},team=Red] at @s run summon minecraft:wolf ~ 117 ~ {NoAI:1b,NoGravity:1b,Tags:["Red"],Silent:1b}
 execute as @a[scores={dropWolfEgg=1..},team=Blue] at @s run summon minecraft:wolf ~ 70 ~ {NoAI:1b,NoGravity:1b,Tags:["Blue"],Silent:1b}
 scoreboard players set @a dropWolfEgg 0
 
 execute as @a[team=Red] at @s positioned ~ ~-2 ~ if entity @e[type=minecraft:wolf,tag=Blue,distance=..0.5] run tellraw @a ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"] "},{"selector":"@s"},{"text":" was bitten! And can't move ","color":"gold"},{"text":"30","color":"dark_green"},{"text":" seconds!","color":"gold"}]
 execute as @a[team=Blue] at @s positioned ~ ~-2 ~ if entity @e[type=minecraft:wolf,tag=Red,distance=..0.5] run tellraw @a ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"] "},{"selector":"@s"},{"text":" was bitten! And can't move ","color":"gold"},{"text":"30","color":"dark_green"},{"text":" seconds!","color":"gold"}]
+
+execute as @a[team=Red] at @s positioned ~ ~-2 ~ if entity @e[type=minecraft:wolf,tag=Blue,distance=..0.5] run playsound minecraft:entity.evoker_fangs.attack master @s ~ ~ ~ 0.3 1
+execute as @a[team=Blue] at @s positioned ~ ~-2 ~ if entity @e[type=minecraft:wolf,tag=Red,distance=..0.5] run playsound minecraft:entity.evoker_fangs.attack master @s ~ ~ ~ 0.3 1
 
 execute as @a[team=Red] at @s positioned ~ ~-2 ~ if entity @e[type=minecraft:wolf,tag=Blue,distance=..0.5] run scoreboard players set @s stopPlayer 600
 execute as @a[team=Blue] at @s positioned ~ ~-2 ~ if entity @e[type=minecraft:wolf,tag=Red,distance=..0.5] run scoreboard players set @s stopPlayer 600

@@ -1,5 +1,5 @@
 scoreboard players set status mw 2
-
+tellraw @s ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"] "},{"text":"Preparing area...","color":"gold"}]
 function mw:prearea
 
 tp @a[team=Blue] -1997.5 72 -1938.5 -135 80

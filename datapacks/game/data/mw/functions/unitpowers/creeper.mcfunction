@@ -8,5 +8,5 @@ execute if score @s delayPowers matches 900.. if entity @s[x=-1995,y=-1,z=-1994,
 execute if score @s delayPowers matches 900.. if entity @s[x=-1995,y=-1,z=-1994,dx=52,dz=52,dy=200] at @s run fill ~1 117 ~1 ~-1 117 ~-1 minecraft:air
 execute if score @s delayPowers matches 900.. if entity @s[x=-1995,y=-1,z=-1994,dx=52,dz=52,dy=200] at @s run fill ~1 119 ~1 ~-1 119 ~-1 minecraft:air
 execute if score @s delayPowers matches 900.. if entity @s[x=-1995,y=-1,z=-1994,dx=52,dz=52,dy=200] run tellraw @s ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"]"},{"text":" You have successfully blown up the walls of the maze!","color":"gold"}]
-
+execute if score @s delayPowers matches 900.. if entity @s[x=-1995,y=-1,z=-1994,dx=52,dz=52,dy=200] run playsound minecraft:block.beacon.activate master @s
 execute if score @s delayPowers matches 900.. if entity @s[x=-1995,y=-1,z=-1994,dx=52,dz=52,dy=200] run scoreboard players set @s delayPowers 0
