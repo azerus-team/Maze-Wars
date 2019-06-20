@@ -64,7 +64,7 @@ execute as @a[scores={dropMedKit=1..},team=Red] unless entity @a[team=Red,scores
 execute as @a[scores={dropMedKit=1..},team=Blue] unless entity @a[team=Blue,scores={stopPlayer=1..}] run give @s minecraft:red_shulker_box{display:{Lore:["§dUse this item if you are stunned"],Name:"[{\"text\":\"First aid kit\",\"color\":\"red\",\"italic\":\"false\"},{\"text\":\" [Press \",\"color\":\"white\",\"italic\":\"false\"},{\"keybind\":\"key.drop\",\"color\":\"white\",\"italic\":\"false\"},{\"text\":\" to use]\",\"color\":\"white\",\"italic\":\"false\"}]"}} 1
 
 execute as @a[scores={dropMedKit=1..},team=Red] run scoreboard players set @a[team=Red] stopPlayer 0
-execute as @a[scores={dropMedKit=1..},team=Blue] run scoreboard players set @a[team=Red] stopPlayer 0
+execute as @a[scores={dropMedKit=1..},team=Blue] run scoreboard players set @a[team=Blue] stopPlayer 0
 
 scoreboard players set @a dropMedKit 0
 

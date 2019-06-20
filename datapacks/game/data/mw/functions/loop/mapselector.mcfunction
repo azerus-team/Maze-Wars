@@ -2,7 +2,7 @@
 
 execute if score map mw matches 0 run data merge block 114 36 1210 {metadata:"",mirror:"NONE",ignoreEntities:0b,powered:0b,seed:0L,author:"AzerusTeam",rotation:"NONE",posX:1,mode:"LOAD",posY:1,sizeX:7,posZ:0,integrity:1.0f,showair:1b,name:"premap:classic",sizeY:2,sizeZ:7,showboundingbox:1b}
 execute if score map mw matches 0 run data merge block 127 40 1213 {Text1:"[{\"color\":\"aqua\",\"text\":\"Map: \"},{\"text\":\"Classic\",\"color\":\"dark_green\"}]"}
-execute if score map mw matches 1 run data merge block 114 36 1210 {metadata:"",mirror:"NONE",ignoreEntities:0b,powered:0b,seed:0L,author:"AzerusTeam",rotation:"NONE",posX:1,mode:"LOAD",posY:1,sizeX:7,posZ:0,integrity:1.0f,showair:1b,name:"premap:Old End",sizeY:2,sizeZ:7,showboundingbox:1b}
+execute if score map mw matches 1 run data merge block 114 36 1210 {metadata:"",mirror:"NONE",ignoreEntities:0b,powered:0b,seed:0L,author:"AzerusTeam",rotation:"NONE",posX:1,mode:"LOAD",posY:1,sizeX:7,posZ:0,integrity:1.0f,showair:1b,name:"premap:coruscant",sizeY:2,sizeZ:7,showboundingbox:1b}
 execute if score map mw matches 1 run data merge block 127 40 1213 {Text1:"[{\"color\":\"aqua\",\"text\":\"Map: \"},{\"text\":\"Old End\",\"color\":\"dark_green\"}]"}
 execute if score map mw matches 2 run data merge block 114 36 1210 {metadata:"",mirror:"NONE",ignoreEntities:0b,powered:0b,seed:0L,author:"AzerusTeam",rotation:"NONE",posX:1,mode:"LOAD",posY:1,sizeX:7,posZ:0,integrity:1.0f,showair:1b,name:"premap:cruise",sizeY:2,sizeZ:7,showboundingbox:1b}
 execute if score map mw matches 2 run data merge block 127 40 1213 {Text1:"[{\"color\":\"aqua\",\"text\":\"Map: \"},{\"text\":\"Cruise\",\"color\":\"dark_green\"}]"}

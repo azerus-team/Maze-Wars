@@ -39,33 +39,33 @@ execute as @a[x=-2007,y=67,z=-2007,dx=300,dy=300,dz=300,team=Blue] at @s positio
 
 tag @e[type=minecraft:armor_stand] remove checkedUnit
 
-execute if score status mw matches 2 as @a[team=Red,scores={skin=1}] run execute at @s positioned ~ 117 ~ rotated as @s run execute align xz positioned ~.5 ~ ~.5 run function mw:tp_and_check
-execute if score status mw matches 2 as @a[team=Red,scores={skin=2}] run execute at @s positioned ~ 117 ~ rotated as @s run execute align xz positioned ~.5 ~ ~.5 run function mw:tp_and_check
-execute if score status mw matches 2 as @a[team=Red,scores={skin=3}] run execute at @s positioned ~ 117 ~ rotated as @s run execute align xz positioned ~.5 ~ ~.5 run function mw:tp_and_check
-execute if score status mw matches 2 as @a[team=Red,scores={skin=4}] run execute at @s positioned ~ 117 ~ rotated as @s run execute align xz positioned ~.5 ~ ~.5 run function mw:tp_and_check
-execute if score status mw matches 2 as @a[team=Red,scores={skin=5}] run execute at @s positioned ~ 117 ~ rotated as @s run execute align xz positioned ~.5 ~ ~.5 run function mw:tp_and_check
-execute if score status mw matches 2 as @a[team=Red,scores={skin=6}] run execute at @s positioned ~ 117 ~ rotated as @s run execute align xz positioned ~.5 ~ ~.5 run function mw:tp_and_check
+execute if score status mw matches 2 as @a[team=Red,scores={skin=1}] run execute at @s positioned ~ 117 ~ rotated as @s run execute align xz positioned ~.5 ~ ~.5 run function mw:tp_and_check/r1
+execute if score status mw matches 2 as @a[team=Red,scores={skin=2}] run execute at @s positioned ~ 117 ~ rotated as @s run execute align xz positioned ~.5 ~ ~.5 run function mw:tp_and_check/r2
+execute if score status mw matches 2 as @a[team=Red,scores={skin=3}] run execute at @s positioned ~ 117 ~ rotated as @s run execute align xz positioned ~.5 ~ ~.5 run function mw:tp_and_check/r3
+execute if score status mw matches 2 as @a[team=Red,scores={skin=4}] run execute at @s positioned ~ 117 ~ rotated as @s run execute align xz positioned ~.5 ~ ~.5 run function mw:tp_and_check/r4
+execute if score status mw matches 2 as @a[team=Red,scores={skin=5}] run execute at @s positioned ~ 117 ~ rotated as @s run execute align xz positioned ~.5 ~ ~.5 run function mw:tp_and_check/r5
+execute if score status mw matches 2 as @a[team=Red,scores={skin=6}] run execute at @s positioned ~ 117 ~ rotated as @s run execute align xz positioned ~.5 ~ ~.5 run function mw:tp_and_check/r6
 
-execute if score status mw matches 2 as @a[team=Blue,scores={skin=1}] run execute at @s positioned ~ 70 ~ rotated as @s run execute align xz positioned ~.5 ~ ~.5 run function mw:tp_and_check
-execute if score status mw matches 2 as @a[team=Blue,scores={skin=2}] run execute at @s positioned ~ 70 ~ rotated as @s run execute align xz positioned ~.5 ~ ~.5 run function mw:tp_and_check
-execute if score status mw matches 2 as @a[team=Blue,scores={skin=3}] run execute at @s positioned ~ 70 ~ rotated as @s run execute align xz positioned ~.5 ~ ~.5 run function mw:tp_and_check
-execute if score status mw matches 2 as @a[team=Blue,scores={skin=4}] run execute at @s positioned ~ 70 ~ rotated as @s run execute align xz positioned ~.5 ~ ~.5 run function mw:tp_and_check
-execute if score status mw matches 2 as @a[team=Blue,scores={skin=5}] run execute at @s positioned ~ 70 ~ rotated as @s run execute align xz positioned ~.5 ~ ~.5 run function mw:tp_and_check
-execute if score status mw matches 2 as @a[team=Blue,scores={skin=6}] run execute at @s positioned ~ 70 ~ rotated as @s run execute align xz positioned ~.5 ~ ~.5 run function mw:tp_and_check
+execute if score status mw matches 2 as @a[team=Blue,scores={skin=1}] run execute at @s positioned ~ 70 ~ rotated as @s run execute align xz positioned ~.5 ~ ~.5 run function mw:tp_and_check/b1
+execute if score status mw matches 2 as @a[team=Blue,scores={skin=2}] run execute at @s positioned ~ 70 ~ rotated as @s run execute align xz positioned ~.5 ~ ~.5 run function mw:tp_and_check/b2
+execute if score status mw matches 2 as @a[team=Blue,scores={skin=3}] run execute at @s positioned ~ 70 ~ rotated as @s run execute align xz positioned ~.5 ~ ~.5 run function mw:tp_and_check/b3
+execute if score status mw matches 2 as @a[team=Blue,scores={skin=4}] run execute at @s positioned ~ 70 ~ rotated as @s run execute align xz positioned ~.5 ~ ~.5 run function mw:tp_and_check/b4
+execute if score status mw matches 2 as @a[team=Blue,scores={skin=5}] run execute at @s positioned ~ 70 ~ rotated as @s run execute align xz positioned ~.5 ~ ~.5 run function mw:tp_and_check/b5
+execute if score status mw matches 2 as @a[team=Blue,scores={skin=6}] run execute at @s positioned ~ 70 ~ rotated as @s run execute align xz positioned ~.5 ~ ~.5 run function mw:tp_and_check/b6
 
-execute if score status mw matches 2 as @a[team=Red,scores={skin=1}] run execute at @s positioned ~ 70 ~ rotated as @s run execute align xz positioned ~.5 ~ ~.5 run function mw:tp_and_check
-execute if score status mw matches 2 as @a[team=Red,scores={skin=2}] run execute at @s positioned ~ 70 ~ rotated as @s run execute align xz positioned ~.5 ~ ~.5 run function mw:tp_and_check
-execute if score status mw matches 2 as @a[team=Red,scores={skin=3}] run execute at @s positioned ~ 70 ~ rotated as @s run execute align xz positioned ~.5 ~ ~.5 run function mw:tp_and_check
-execute if score status mw matches 2 as @a[team=Red,scores={skin=4}] run execute at @s positioned ~ 70 ~ rotated as @s run execute align xz positioned ~.5 ~ ~.5 run function mw:tp_and_check
-execute if score status mw matches 2 as @a[team=Red,scores={skin=5}] run execute at @s positioned ~ 70 ~ rotated as @s run execute align xz positioned ~.5 ~ ~.5 run function mw:tp_and_check
-execute if score status mw matches 2 as @a[team=Red,scores={skin=6}] run execute at @s positioned ~ 70 ~ rotated as @s run execute align xz positioned ~.5 ~ ~.5 run function mw:tp_and_check
+execute if score status mw matches 2 as @a[team=Red,scores={skin=1}] run execute at @s positioned ~ 70 ~ rotated as @s run execute align xz positioned ~.5 ~ ~.5 run function mw:tp_and_check/r1
+execute if score status mw matches 2 as @a[team=Red,scores={skin=2}] run execute at @s positioned ~ 70 ~ rotated as @s run execute align xz positioned ~.5 ~ ~.5 run function mw:tp_and_check/r2
+execute if score status mw matches 2 as @a[team=Red,scores={skin=3}] run execute at @s positioned ~ 70 ~ rotated as @s run execute align xz positioned ~.5 ~ ~.5 run function mw:tp_and_check/r3
+execute if score status mw matches 2 as @a[team=Red,scores={skin=4}] run execute at @s positioned ~ 70 ~ rotated as @s run execute align xz positioned ~.5 ~ ~.5 run function mw:tp_and_check/r4
+execute if score status mw matches 2 as @a[team=Red,scores={skin=5}] run execute at @s positioned ~ 70 ~ rotated as @s run execute align xz positioned ~.5 ~ ~.5 run function mw:tp_and_check/r5
+execute if score status mw matches 2 as @a[team=Red,scores={skin=6}] run execute at @s positioned ~ 70 ~ rotated as @s run execute align xz positioned ~.5 ~ ~.5 run function mw:tp_and_check/r6
 
-execute if score status mw matches 2 as @a[team=Blue,scores={skin=1}] run execute at @s positioned ~ 117 ~ rotated as @s run execute align xz positioned ~.5 ~ ~.5 run function mw:tp_and_check
-execute if score status mw matches 2 as @a[team=Blue,scores={skin=2}] run execute at @s positioned ~ 117 ~ rotated as @s run execute align xz positioned ~.5 ~ ~.5 run function mw:tp_and_check
-execute if score status mw matches 2 as @a[team=Blue,scores={skin=3}] run execute at @s positioned ~ 117 ~ rotated as @s run execute align xz positioned ~.5 ~ ~.5 run function mw:tp_and_check
-execute if score status mw matches 2 as @a[team=Blue,scores={skin=4}] run execute at @s positioned ~ 117 ~ rotated as @s run execute align xz positioned ~.5 ~ ~.5 run function mw:tp_and_check
-execute if score status mw matches 2 as @a[team=Blue,scores={skin=5}] run execute at @s positioned ~ 117 ~ rotated as @s run execute align xz positioned ~.5 ~ ~.5 run function mw:tp_and_check
-execute if score status mw matches 2 as @a[team=Blue,scores={skin=6}] run execute at @s positioned ~ 117 ~ rotated as @s run execute align xz positioned ~.5 ~ ~.5 run function mw:tp_and_check
+execute if score status mw matches 2 as @a[team=Blue,scores={skin=1}] run execute at @s positioned ~ 117 ~ rotated as @s run execute align xz positioned ~.5 ~ ~.5 run function mw:tp_and_check/b1
+execute if score status mw matches 2 as @a[team=Blue,scores={skin=2}] run execute at @s positioned ~ 117 ~ rotated as @s run execute align xz positioned ~.5 ~ ~.5 run function mw:tp_and_check/b2
+execute if score status mw matches 2 as @a[team=Blue,scores={skin=3}] run execute at @s positioned ~ 117 ~ rotated as @s run execute align xz positioned ~.5 ~ ~.5 run function mw:tp_and_check/b3
+execute if score status mw matches 2 as @a[team=Blue,scores={skin=4}] run execute at @s positioned ~ 117 ~ rotated as @s run execute align xz positioned ~.5 ~ ~.5 run function mw:tp_and_check/b4
+execute if score status mw matches 2 as @a[team=Blue,scores={skin=5}] run execute at @s positioned ~ 117 ~ rotated as @s run execute align xz positioned ~.5 ~ ~.5 run function mw:tp_and_check/b5
+execute if score status mw matches 2 as @a[team=Blue,scores={skin=6}] run execute at @s positioned ~ 117 ~ rotated as @s run execute align xz positioned ~.5 ~ ~.5 run function mw:tp_and_check/b6
 
 execute as @a[x=-2007,y=67,z=-2007,dx=300,dy=300,dz=300,team=Red] at @s positioned ~ ~ ~ if block ~ ~-3 ~ minecraft:emerald_block run scoreboard players add redFlag mw 1
 execute as @a[x=-2007,y=67,z=-2007,dx=300,dy=300,dz=300,team=Blue] at @s positioned ~ ~ ~ if block ~ ~-3 ~ minecraft:emerald_block run scoreboard players add blueFlag mw 1

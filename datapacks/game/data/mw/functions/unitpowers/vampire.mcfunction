@@ -5,3 +5,5 @@ execute as @s if score @s delayPowers matches ..499 run tellraw @s ["",{"text":"
 execute at @s if score @s delayPowers matches 500.. if entity @s[team=Red] at @r[team=Blue,level=5..] run function mw:unitpowers/vampire/red
 execute at @s if score @s delayPowers matches 500.. if entity @s[team=Blue] at @r[team=Red,level=5..] run function mw:unitpowers/vampire/blue
 
+execute at @s if score @s delayPowers matches 500.. if entity @s[team=Red] unless entity @p[team=Blue,level=5..] run tellraw @s ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"] "},{"text":"No one has more than 5 stamina","color":"gold"}]
+execute at @s if score @s delayPowers matches 500.. if entity @s[team=Blue] unless entity @p[team=Red,level=5..] run tellraw @s ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"] "},{"text":"No one has more than 5 stamina","color":"gold"}]
