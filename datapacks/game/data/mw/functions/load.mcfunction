@@ -18,11 +18,12 @@
 #################################################################################################################
 
 
-say Maze Wars v0.5 installed!
+say Maze Wars v1.0 installed!
 
 
 scoreboard objectives setdisplay sidebar
 #Scoreboard objectivies
+	scoreboard objectives add msgCD dummy
 	scoreboard objectives add mw dummy
 		scoreboard players set distance mw 3
 		scoreboard players set map mw 0

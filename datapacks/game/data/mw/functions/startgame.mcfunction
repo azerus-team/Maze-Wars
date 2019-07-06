@@ -1,5 +1,5 @@
 scoreboard players set status mw 2
-tellraw @s ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"] "},{"text":"Preparing area...","color":"gold"}]
+tellraw @a ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"] "},{"text":"Preparing area...","color":"gold"}]
 function mw:prearea
 
 tp @a[team=Blue] -1997.5 72 -1938.5 -135 80
@@ -19,3 +19,4 @@ scoreboard players set min mw 10
 scoreboard players set sec mw 0
 bossbar set minecraft:timer visible true
 
+tellraw @a ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"] "},{"text":"Click","color":"gold"},{"text":" "},{"keybind":"key.sneak","color":"aqua"},{"text":" to activate ability.","color":"gold"}]

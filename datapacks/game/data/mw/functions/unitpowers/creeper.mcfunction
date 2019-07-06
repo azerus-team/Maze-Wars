@@ -1,6 +1,8 @@
 #"Крипер"-> Нажимает клавишу F, тем самым активирует свою способность  (Уничтожение блоков в радиусе 5-ти блоков. Кулдаун действует 45 секунд).
 
-execute if score @s delayPowers matches ..899 run tellraw @s ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"] "},{"text":"Cooldown for this power up: ","color":"gold"},{"score":{"name":"@s","objective":"delayPowersInSec"},"color":"green"},{"text":" seconds!","color":"gold"}]
+execute if score @s delayPowers matches ..899 if score @s msgCD matches 20 run tellraw @s ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"] "},{"text":"Cooldown for this power up: ","color":"gold"},{"score":{"name":"@s","objective":"delayPowersInSec"},"color":"green"},{"text":" seconds!","color":"gold"}]
+
+execute if score @s delayPowers matches ..899 if score @s msgCD matches 20 run scoreboard players set @s msgCD 0
 
 execute if score @s delayPowers matches 900.. unless entity @s[x=-1995,y=-1,z=-1994,dx=52,dz=52,dy=200] run tellraw @s ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"] "},{"text":"This power up cannot be used on the edge of a maze.","color":"gold"}]
 execute if score @s delayPowers matches 900.. if entity @s[x=-1995,y=-1,z=-1994,dx=52,dz=52,dy=200] at @s run fill ~1 72 ~1 ~-1 72 ~-1 minecraft:air

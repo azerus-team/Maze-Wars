@@ -8,3 +8,5 @@ execute at @s if score @s delayPowers matches 700.. if entity @s[team=Blue] run 
 execute at @s if score @s delayPowers matches 700.. if entity @s[team=Blue] run tellraw @s ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"]"},{"text":" You have successfully slowed down the","color":"gold"},{"text":" Red","color":"red"},{"text":" team!","color":"gold"}]
 scoreboard players set @s[scores={delayPowers=700..}] delayPowers 0
 execute at @s if score @s delayPowers matches 700.. if entity @s[team=Blue] run playsound minecraft:block.beacon.activate master @s
+execute if score @s delayPowers matches ..699 if score @s msgCD matches 20 run tellraw @s ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"] "},{"text":"Cooldown for this power up: ","color":"gold"},{"score":{"name":"@s","objective":"delayPowersInSec"},"color":"green"},{"text":" seconds!","color":"gold"}]
+execute if score @s delayPowers matches ..699 if score @s msgCD matches 20 run scoreboard players set @s msgCD 0

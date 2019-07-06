@@ -57,8 +57,5 @@ execute if score status mw matches 2 as @a[scores={shiftClick=1,skin=6}] run fun
 
 scoreboard players set @a shiftClick 0
 
-
-
-
-
-
+execute as @a unless score @s msgCD matches 0.. run scoreboard players set @s msgCD 0
+scoreboard players add @a[scores={msgCD=..19}] msgCD 1
