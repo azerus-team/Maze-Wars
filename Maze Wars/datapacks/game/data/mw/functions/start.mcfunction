@@ -1,3 +1,0 @@
-execute unless entity @a[team=Red] run tellraw @a ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"] "},{"text":"Please enter the","color":"gold"},{"text":" Red","color":"red"},{"text":" ","color":"dark_red"},{"text":"team to start the game!","color":"gold"}]
-execute unless entity @a[team=Blue] run tellraw @a ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"] "},{"text":"Please enter the","color":"gold"},{"text":" Blue","color":"blue"},{"text":" ","color":"dark_red"},{"text":"team to start the game!","color":"gold"}]
-execute if entity @a[team=Red] if entity @a[team=Blue] run function mw:cstart
