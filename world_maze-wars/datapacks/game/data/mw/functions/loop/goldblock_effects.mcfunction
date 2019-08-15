@@ -43,8 +43,8 @@ execute as @a[scores={dropWolfEgg=1..},team=Red] at @s run summon minecraft:wolf
 execute as @a[scores={dropWolfEgg=1..},team=Blue] at @s run summon minecraft:wolf ~ 70 ~ {NoAI:1b,NoGravity:1b,Tags:["Blue"],Silent:1b}
 scoreboard players set @a dropWolfEgg 0
 
-execute as @a[team=Red] at @s positioned ~ ~-2 ~ if entity @e[type=minecraft:wolf,tag=Blue,distance=..0.5] run tellraw @a ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"] "},{"selector":"@s"},{"text":" was bitten! And can't move ","color":"gold"},{"text":"30","color":"dark_green"},{"text":" seconds!","color":"gold"}]
-execute as @a[team=Blue] at @s positioned ~ ~-2 ~ if entity @e[type=minecraft:wolf,tag=Red,distance=..0.5] run tellraw @a ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"] "},{"selector":"@s"},{"text":" was bitten! And can't move ","color":"gold"},{"text":"30","color":"dark_green"},{"text":" seconds!","color":"gold"}]
+execute as @a[team=Red] at @s positioned ~ ~-2 ~ if entity @e[type=minecraft:wolf,tag=Blue,distance=..0.5] run tellraw @a ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"] "},{"selector":"@s"},{"text":" was bitten, and can't move for ","color":"gold"},{"text":"30","color":"dark_green"},{"text":" seconds!","color":"gold"}]
+execute as @a[team=Blue] at @s positioned ~ ~-2 ~ if entity @e[type=minecraft:wolf,tag=Red,distance=..0.5] run tellraw @a ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"] "},{"selector":"@s"},{"text":" was bitten, and can't move for ","color":"gold"},{"text":"30","color":"dark_green"},{"text":" seconds!","color":"gold"}]
 
 execute as @a[team=Red] at @s positioned ~ ~-2 ~ if entity @e[type=minecraft:wolf,tag=Blue,distance=..0.5] run playsound minecraft:entity.evoker_fangs.attack master @s ~ ~ ~ 0.3 1
 execute as @a[team=Blue] at @s positioned ~ ~-2 ~ if entity @e[type=minecraft:wolf,tag=Red,distance=..0.5] run playsound minecraft:entity.evoker_fangs.attack master @s ~ ~ ~ 0.3 1
@@ -60,7 +60,7 @@ execute as @a[team=Blue] at @s positioned ~ 70 ~ if entity @e[type=minecraft:wol
 
 
 
-execute as @a[scores={stopPlayer=1..}] run experience set @s 0 levels
+execute as @a[scores={stopPlayer=1..}] run scoreboard players set @s level 0
 execute as @a[scores={stopPlayer=1..}] run scoreboard players remove @s stopPlayer 1
 #first aid kit
 execute as @a[scores={dropMedKit=1..},team=Red] if entity @a[team=Red,scores={stopPlayer=1..}] at @a[team=Red,scores={stopPlayer=1..}] run tellraw @a[team=Red] ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"] "},{"selector":"@s"},{"text":" used ","color":"gold"},{"text":"First aid kit","color":"dark_green"},{"text":". And helped","color":"gold"},{"text":" ","color":"white"},{"selector":"@p","color":"white"}]

@@ -17,13 +17,14 @@ execute if score status mw matches 0 as @a[team=] run replaceitem entity @s armo
 execute if score status mw matches 0 as @a[team=] run replaceitem entity @s armor.legs minecraft:air
 execute if score status mw matches 0 as @a[team=] run replaceitem entity @s armor.feet minecraft:air
 
-execute if score status mw matches 0 as @a run replaceitem entity @s hotbar.7 minecraft:ender_eye{display:{Name:'[{"text":"Guide","color":"gold",italic:false},{"text":" [Press ","color":"white","italic":false},{"keybind":"key.drop","italic":false},{"text":" to join]","color":"white","italic":false}]'}}
+execute if score status mw matches 0 as @a run replaceitem entity @s hotbar.7 minecraft:ender_eye{display:{Name:'["",{"text":"Guide","color":"gold","italic":false},{"text":" [Press ","color":"white","italic":false},{"keybind":"key.drop","italic":false},{"text":" to warp]","color":"white","italic":false}]'}}
 
 
 
 execute as @e[scores={guideWarp=1..}] run tp @s 93.5 40 1197.5 90 0
-
+scoreboard players set @a guideWarp 0
 scoreboard players add base_block var 1
+
 execute if score base_block var matches 20 run setblock 89 41 1178 minecraft:lapis_block
 execute if score base_block var matches 40 run setblock 89 41 1178 minecraft:redstone_block
 execute if score base_block var matches 40.. run scoreboard players set base_block var -1

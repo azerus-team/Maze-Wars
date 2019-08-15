@@ -5,3 +5,11 @@ execute if score status mw matches 1 if score startTime mw matches 1 run functio
 execute if score status mw matches 1 if score startTime mw matches 1..10 run scoreboard players remove startTime mw 1
 
 execute if score status mw matches 2 run scoreboard players remove sec mw 1
+
+
+
+
+
+
+
+#execute if score status mw matches 2 as @a[team=!,scores={level=0,skin=1..4}] run title @a actionbar ["",{"text":"["},{"text":"\u2b1c\u2b1c\u2b1c\u2b1c\u2b1c\u2b1c\u2b1c\u2b1c\u2b1c\u2b1c\u2b1c\u2b1c\u2b1c\u2b1c","bold":true,"color":"red"},{"text":"]"}]

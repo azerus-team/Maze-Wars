@@ -10,7 +10,7 @@ kill @e[type=minecraft:armor_stand,scores={skin=1..6}]
 function mw:setunit
 
 scoreboard objectives setdisplay sidebar MazeWars
-experience set @a[team=!] 15 levels
+scoreboard players set @a[team=!] level 20
 
 team modify Red nametagVisibility hideForOtherTeams
 team modify Blue nametagVisibility hideForOtherTeams

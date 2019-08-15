@@ -12,8 +12,8 @@ execute as @a[tag=bowGamer,nbt=!{Inventory:[{Slot:27b,id:"minecraft:arrow"}]}] r
 
 kill @e[type=minecraft:arrow,nbt={inGround:1b}]
 
-execute at @e[type=armor_stand,tag=bowGame] as @a[distance=4..,tag=bowGamer] run clear @s minecraft:bow
-execute at @e[type=armor_stand,tag=bowGame] as @a[distance=4..,tag=bowGamer] run clear @s minecraft:arrow
+execute at @e[type=armor_stand,tag=bowGame] as @a[distance=4..] run clear @s minecraft:bow
+execute at @e[type=armor_stand,tag=bowGame] as @a[distance=4..] run clear @s minecraft:arrow
 
 execute at @e[type=armor_stand,tag=bowGame] as @a[distance=4..,tag=bowGamer,scores={bowGame=1..}] run title @s title ["",{"text":"Your score: ","color":"dark_green"},{"score":{"name":"@s","objective":"bowGame"},"color":"gold"}]
 execute at @e[type=armor_stand,tag=bowGame] as @a[distance=4..,tag=bowGamer] run tag @s remove bowGamer

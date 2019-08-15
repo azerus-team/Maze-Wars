@@ -1,7 +1,16 @@
-execute as @a[x=-2007,y=67,z=-2007,dx=300,dy=300,dz=300,team=!] at @s positioned ~ ~ ~ if block ~ ~-3 ~ minecraft:diamond_block run experience add @s 7 levels
-execute as @a[level=21..,scores={skin=5}] run experience set @s 15 levels
-execute as @a[level=16..,scores={skin=1..4}] run experience set @s 15 levels
-execute as @a[level=16..,scores={skin=6}] run experience set @s 15 levels
+execute as @a[scores={skin=1..4}] run function mw:loop/exp_reg
+execute as @a[scores={skin=6}] run function mw:loop/exp_reg
+
+execute as @a[scores={skin=5}] run function mw:loop/exp_unusial
+
+
+
+
+
+execute as @a[x=-2007,y=67,z=-2007,dx=300,dy=300,dz=300,team=!] at @s positioned ~ ~ ~ if block ~ ~-3 ~ minecraft:diamond_block run scoreboard players add @s level 7
+execute as @a[scores={skin=5,level=21}] run scoreboard players set @s level 20
+execute as @a[scores={skin=1..4,level=16..}] run scoreboard players set @s level 15
+execute as @a[scores={skin=6,level=16..}] run scoreboard players set @s level 15
 
 execute as @a[x=-2007,y=67,z=-2007,dx=300,dy=300,dz=300,team=!] at @s positioned ~ ~ ~ if block ~ ~-3 ~ minecraft:diamond_block run function mw:flag
 

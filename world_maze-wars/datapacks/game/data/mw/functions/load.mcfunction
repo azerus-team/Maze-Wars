@@ -68,7 +68,7 @@ scoreboard objectives setdisplay sidebar
 		scoreboard players set §eFlags MazeWars 2
 		scoreboard players set §cRed: MazeWars 1
 		scoreboard players set §9Blue: MazeWars 0
-	scoreboard objectives add xp dummy
+	scoreboard objectives add level dummy
 
 bossbar add timer {"text":"Game time: "}
 bossbar set timer color green

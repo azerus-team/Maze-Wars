@@ -33,6 +33,7 @@ kill @e[type=shulker]
 clone 129 42 1214 129 40 1212 127 40 1212
 
 experience set @a 0 levels
+scoreboard players set @a level 0
 
 
 

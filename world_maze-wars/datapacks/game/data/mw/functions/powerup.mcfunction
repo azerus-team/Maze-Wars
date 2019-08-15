@@ -22,7 +22,7 @@ function mw:random
     execute if score random var matches 11..14 run tellraw @a ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"] "},{"selector":"@s"},{"text":" "},{"text":"has found a ","color":"gold"},{"text":"Clock","color":"green"},{"text":". Time has been increased!","color":"gold"}]
     execute if score random var matches 11..14 run scoreboard players add min mw 1
 
-    execute if score random var matches 15..19 run tellraw @a ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"] "},{"selector":"@s"},{"text":" "},{"text":"has found a ","color":"gold"},{"text":"Broken clock","color":"green"},{"text":". Time has been reduced!","color":"gold"}]
+    execute if score random var matches 15..19 run tellraw @a ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"] "},{"selector":"@s"},{"text":" "},{"text":"has found a ","color":"gold"},{"text":"Broken Clock","color":"green"},{"text":". Time has been reduced!","color":"gold"}]
     execute if score random var matches 15..19 run scoreboard players remove min mw 1
 
     execute if score random var matches 20 if entity @s[team=Blue] run tellraw @a[team=Blue] ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"] "},{"selector":"@s"},{"text":" "},{"text":"has found a ","color":"gold"},{"text":"Black hole","color":"green"},{"text":". And was teleported to a random point!","color":"gold"}]

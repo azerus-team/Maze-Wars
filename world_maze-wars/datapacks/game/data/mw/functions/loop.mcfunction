@@ -32,15 +32,15 @@ setblock 114 37 1210 minecraft:air
 setblock 114 37 1210 minecraft:redstone_block
 
 #view distance
-    execute if score status mw matches 2 if score distance mw matches 2 as @a at @s run fill ~-2 ~-2 ~-2 ~2 ~2 ~2 minecraft:barrier replace minecraft:black_concrete
-    execute if score status mw matches 2 if score distance mw matches 3 as @a at @s run fill ~-3 ~-3 ~-3 ~3 ~3 ~3 minecraft:barrier replace minecraft:black_concrete
-    execute if score status mw matches 2 if score distance mw matches 4 as @a at @s run fill ~-4 ~-4 ~-4 ~4 ~4 ~4 minecraft:barrier replace minecraft:black_concrete
-    execute if score status mw matches 2 if score distance mw matches 5 as @a at @s run fill ~-5 ~-5 ~-5 ~5 ~5 ~5 minecraft:barrier replace minecraft:black_concrete
-    execute if score status mw matches 2 if score distance mw matches 6 as @a at @s run fill ~-6 ~-6 ~-6 ~6 ~6 ~6 minecraft:barrier replace minecraft:black_concrete
-    execute if score status mw matches 2 if score distance mw matches 7 as @a at @s run fill ~-7 ~-7 ~-7 ~7 ~7 ~7 minecraft:barrier replace minecraft:black_concrete
-    execute if score status mw matches 2 if score distance mw matches 8 as @a at @s run fill ~-8 ~-8 ~-8 ~8 ~8 ~8 minecraft:barrier replace minecraft:black_concrete
-    execute if score status mw matches 2 if score distance mw matches 9 as @a at @s run fill ~-9 ~-9 ~-9 ~9 ~9 ~9 minecraft:barrier replace minecraft:black_concrete
-    execute if score status mw matches 2 if score distance mw matches 10 as @a at @s run fill ~-10 ~-10 ~-10 ~10 ~10 ~10 minecraft:barrier replace minecraft:black_concrete
+    execute if score status mw matches 2 if score distance mw matches 2 as @a[team=!] at @s run fill ~-2 ~-2 ~-2 ~2 ~2 ~2 minecraft:barrier replace minecraft:black_concrete
+    execute if score status mw matches 2 if score distance mw matches 3 as @a[team=!] at @s run fill ~-3 ~-3 ~-3 ~3 ~3 ~3 minecraft:barrier replace minecraft:black_concrete
+    execute if score status mw matches 2 if score distance mw matches 4 as @a[team=!] at @s run fill ~-4 ~-4 ~-4 ~4 ~4 ~4 minecraft:barrier replace minecraft:black_concrete
+    execute if score status mw matches 2 if score distance mw matches 5 as @a[team=!] at @s run fill ~-5 ~-5 ~-5 ~5 ~5 ~5 minecraft:barrier replace minecraft:black_concrete
+    execute if score status mw matches 2 if score distance mw matches 6 as @a[team=!] at @s run fill ~-6 ~-6 ~-6 ~6 ~6 ~6 minecraft:barrier replace minecraft:black_concrete
+    execute if score status mw matches 2 if score distance mw matches 7 as @a[team=!] at @s run fill ~-7 ~-7 ~-7 ~7 ~7 ~7 minecraft:barrier replace minecraft:black_concrete
+    execute if score status mw matches 2 if score distance mw matches 8 as @a[team=!] at @s run fill ~-8 ~-8 ~-8 ~8 ~8 ~8 minecraft:barrier replace minecraft:black_concrete
+    execute if score status mw matches 2 if score distance mw matches 9 as @a[team=!] at @s run fill ~-9 ~-9 ~-9 ~9 ~9 ~9 minecraft:barrier replace minecraft:black_concrete
+    execute if score status mw matches 2 if score distance mw matches 10 as @a[team=!] at @s run fill ~-10 ~-10 ~-10 ~10 ~10 ~10 minecraft:barrier replace minecraft:black_concrete
 
 
 #timer
