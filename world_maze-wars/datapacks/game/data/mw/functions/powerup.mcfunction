@@ -15,9 +15,9 @@ function mw:random
     execute if score random var matches 35..36 if entity @s[team=Red] run tellraw @a[team=Red] ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"] "},{"selector":"@s"},{"text":" "},{"text":"has found ","color":"gold"},{"text":"Black dye","color":"green"},{"text":".","color":"gold"}]
 
     execute if score random var matches 7..10 if entity @s[team=Blue] run tellraw @a[team=Blue] ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"] "},{"selector":"@s"},{"text":" "},{"text":"has found a ","color":"gold"},{"text":"Fountain of life","color":"green"},{"text":". Restored all stamina.","color":"gold"}]
-    execute if score random var matches 7..10 if entity @s[team=Blue] run experience set @a[team=Blue] 20 levels
+    execute if score random var matches 7..10 if entity @s[team=Blue] run scoreboard players set @a[team=Blue] level 20
     execute if score random var matches 7..10 if entity @s[team=Red] run tellraw @a[team=Red] ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"] "},{"selector":"@s"},{"text":" "},{"text":"has found a ","color":"gold"},{"text":"Fountain of life","color":"green"},{"text":". Restored all stamina.","color":"gold"}]
-    execute if score random var matches 7..10 if entity @s[team=Red] run experience set @a[team=Red] 20 levels
+    execute if score random var matches 7..10 if entity @s[team=Red] run scoreboard players set @a[team=Red] level 20
 
     execute if score random var matches 11..14 run tellraw @a ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"] "},{"selector":"@s"},{"text":" "},{"text":"has found a ","color":"gold"},{"text":"Clock","color":"green"},{"text":". Time has been increased!","color":"gold"}]
     execute if score random var matches 11..14 run scoreboard players add min mw 1
