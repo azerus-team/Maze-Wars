@@ -2,25 +2,25 @@
 execute if score rTorch mw matches 1.. run scoreboard players remove rTorch mw 1
 execute if score bTorch mw matches 1.. run scoreboard players remove bTorch mw 1
 
-execute as @a[team=Red] if score distance mw matches 2 if score rTorch mw matches 1.. at @s run fill ~-5 ~-5 ~-5 ~5 ~5 ~5 minecraft:barrier replace minecraft:black_concrete
-execute as @a[team=Red] if score distance mw matches 3 if score rTorch mw matches 1.. at @s run fill ~-6 ~-6 ~-6 ~6 ~6 ~6 minecraft:barrier replace minecraft:black_concrete
-execute as @a[team=Red] if score distance mw matches 4 if score rTorch mw matches 1.. at @s run fill ~-7 ~-7 ~-7 ~7 ~7 ~7 minecraft:barrier replace minecraft:black_concrete
-execute as @a[team=Red] if score distance mw matches 5 if score rTorch mw matches 1.. at @s run fill ~-8 ~-8 ~-8 ~8 ~8 ~8 minecraft:barrier replace minecraft:black_concrete
-execute as @a[team=Red] if score distance mw matches 6 if score rTorch mw matches 1.. at @s run fill ~-9 ~-9 ~-9 ~9 ~9 ~9 minecraft:barrier replace minecraft:black_concrete
-execute as @a[team=Red] if score distance mw matches 7 if score rTorch mw matches 1.. at @s run fill ~-10 ~-10 ~-10 ~10 ~10 ~10 minecraft:barrier replace minecraft:black_concrete
-execute as @a[team=Red] if score distance mw matches 8 if score rTorch mw matches 1.. at @s run fill ~-11 ~-11 ~-11 ~11 ~11 ~11 minecraft:barrier replace minecraft:black_concrete
-execute as @a[team=Red] if score distance mw matches 9 if score rTorch mw matches 1.. at @s run fill ~-12 ~-12 ~-12 ~12 ~12 ~12 minecraft:barrier replace minecraft:black_concrete
-execute as @a[team=Red] if score distance mw matches 10 if score rTorch mw matches 1.. at @s run fill ~-13 ~-13 ~-13 ~13 ~13 ~13 minecraft:barrier replace minecraft:black_concrete
+execute as @a[team=Red] if score status mw matches 2 if score distance mw matches 2 if score rTorch mw matches 1.. at @s run fill ~-5 ~-5 ~-5 ~5 ~5 ~5 minecraft:barrier replace minecraft:black_concrete
+execute as @a[team=Red] if score status mw matches 2 if score distance mw matches 3 if score rTorch mw matches 1.. at @s run fill ~-6 ~-6 ~-6 ~6 ~6 ~6 minecraft:barrier replace minecraft:black_concrete
+execute as @a[team=Red] if score status mw matches 2 if score distance mw matches 4 if score rTorch mw matches 1.. at @s run fill ~-7 ~-7 ~-7 ~7 ~7 ~7 minecraft:barrier replace minecraft:black_concrete
+execute as @a[team=Red] if score status mw matches 2 if score distance mw matches 5 if score rTorch mw matches 1.. at @s run fill ~-8 ~-8 ~-8 ~8 ~8 ~8 minecraft:barrier replace minecraft:black_concrete
+execute as @a[team=Red] if score status mw matches 2 if score distance mw matches 6 if score rTorch mw matches 1.. at @s run fill ~-9 ~-9 ~-9 ~9 ~9 ~9 minecraft:barrier replace minecraft:black_concrete
+execute as @a[team=Red] if score status mw matches 2 if score distance mw matches 7 if score rTorch mw matches 1.. at @s run fill ~-10 ~-10 ~-10 ~10 ~10 ~10 minecraft:barrier replace minecraft:black_concrete
+execute as @a[team=Red] if score status mw matches 2 if score distance mw matches 8 if score rTorch mw matches 1.. at @s run fill ~-11 ~-11 ~-11 ~11 ~11 ~11 minecraft:barrier replace minecraft:black_concrete
+execute as @a[team=Red] if score status mw matches 2 if score distance mw matches 9 if score rTorch mw matches 1.. at @s run fill ~-12 ~-12 ~-12 ~12 ~12 ~12 minecraft:barrier replace minecraft:black_concrete
+execute as @a[team=Red] if score status mw matches 2 if score distance mw matches 10 if score rTorch mw matches 1.. at @s run fill ~-13 ~-13 ~-13 ~13 ~13 ~13 minecraft:barrier replace minecraft:black_concrete
 
-execute as @a[team=Blue] if score distance mw matches 2 if score bTorch mw matches 1.. at @s run fill ~-5 ~-5 ~-5 ~5 ~5 ~5 minecraft:barrier replace minecraft:black_concrete
-execute as @a[team=Blue] if score distance mw matches 3 if score bTorch mw matches 1.. at @s run fill ~-6 ~-6 ~-6 ~6 ~6 ~6 minecraft:barrier replace minecraft:black_concrete
-execute as @a[team=Blue] if score distance mw matches 4 if score bTorch mw matches 1.. at @s run fill ~-7 ~-7 ~-7 ~7 ~7 ~7 minecraft:barrier replace minecraft:black_concrete
-execute as @a[team=Blue] if score distance mw matches 5 if score bTorch mw matches 1.. at @s run fill ~-8 ~-8 ~-8 ~8 ~8 ~8 minecraft:barrier replace minecraft:black_concrete
-execute as @a[team=Blue] if score distance mw matches 6 if score bTorch mw matches 1.. at @s run fill ~-9 ~-9 ~-9 ~9 ~9 ~9 minecraft:barrier replace minecraft:black_concrete
-execute as @a[team=Blue] if score distance mw matches 7 if score bTorch mw matches 1.. at @s run fill ~-10 ~-10 ~-10 ~10 ~10 ~10 minecraft:barrier replace minecraft:black_concrete
-execute as @a[team=Blue] if score distance mw matches 8 if score bTorch mw matches 1.. at @s run fill ~-11 ~-11 ~-11 ~11 ~11 ~11 minecraft:barrier replace minecraft:black_concrete
-execute as @a[team=Blue] if score distance mw matches 9 if score bTorch mw matches 1.. at @s run fill ~-12 ~-12 ~-12 ~12 ~12 ~12 minecraft:barrier replace minecraft:black_concrete
-execute as @a[team=Blue] if score distance mw matches 10 if score bTorch mw matches 1.. at @s run fill ~-13 ~-13 ~-13 ~13 ~13 ~13 minecraft:barrier replace minecraft:black_concrete
+execute as @a[team=Blue] if score status mw matches 2 if score distance mw matches 2 if score bTorch mw matches 1.. at @s run fill ~-5 ~-5 ~-5 ~5 ~5 ~5 minecraft:barrier replace minecraft:black_concrete
+execute as @a[team=Blue] if score status mw matches 2 if score distance mw matches 3 if score bTorch mw matches 1.. at @s run fill ~-6 ~-6 ~-6 ~6 ~6 ~6 minecraft:barrier replace minecraft:black_concrete
+execute as @a[team=Blue] if score status mw matches 2 if score distance mw matches 4 if score bTorch mw matches 1.. at @s run fill ~-7 ~-7 ~-7 ~7 ~7 ~7 minecraft:barrier replace minecraft:black_concrete
+execute as @a[team=Blue] if score status mw matches 2 if score distance mw matches 5 if score bTorch mw matches 1.. at @s run fill ~-8 ~-8 ~-8 ~8 ~8 ~8 minecraft:barrier replace minecraft:black_concrete
+execute as @a[team=Blue] if score status mw matches 2 if score distance mw matches 6 if score bTorch mw matches 1.. at @s run fill ~-9 ~-9 ~-9 ~9 ~9 ~9 minecraft:barrier replace minecraft:black_concrete
+execute as @a[team=Blue] if score status mw matches 2 if score distance mw matches 7 if score bTorch mw matches 1.. at @s run fill ~-10 ~-10 ~-10 ~10 ~10 ~10 minecraft:barrier replace minecraft:black_concrete
+execute as @a[team=Blue] if score status mw matches 2 if score distance mw matches 8 if score bTorch mw matches 1.. at @s run fill ~-11 ~-11 ~-11 ~11 ~11 ~11 minecraft:barrier replace minecraft:black_concrete
+execute as @a[team=Blue] if score status mw matches 2 if score distance mw matches 9 if score bTorch mw matches 1.. at @s run fill ~-12 ~-12 ~-12 ~12 ~12 ~12 minecraft:barrier replace minecraft:black_concrete
+execute as @a[team=Blue] if score status mw matches 2 if score distance mw matches 10 if score bTorch mw matches 1.. at @s run fill ~-13 ~-13 ~-13 ~13 ~13 ~13 minecraft:barrier replace minecraft:black_concrete
 #tnt
 execute as @a[scores={tntDrop=1..}] unless entity @s[x=-1995,y=-1,z=-1994,dx=52,dz=52,dy=200] run tellraw @s ["",{"text":"["},{"text":"Maze Wars","color":"dark_green"},{"text":"] "},{"text":"T","color":"red"},{"text":"N","color":"white"},{"text":"T","color":"red"},{"text":" cannot be used on border of the edge.","color":"gold"}]
 execute as @a[scores={tntDrop=1..}] unless entity @s[x=-1995,y=-1,z=-1994,dx=52,dz=52,dy=200] run give @s minecraft:tnt{display:{Name:"[{\"text\":\"T\",\"color\":\"red\",\"italic\":\"false\"},{\"text\":\"N\",\"color\":\"white\",\"italic\":\"false\"},{\"text\":\"T\",\"color\":\"red\",\"italic\":\"false\"},{\"text\":\" [Press \",\"color\":\"white\",\"italic\":\"false\"},{\"keybind\":\"key.drop\",\"color\":\"white\",\"italic\":\"false\"},{\"text\":\" to use]\",\"color\":\"white\",\"italic\":\"false\"}]"}} 1
